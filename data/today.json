@@ -1,0 +1,97 @@
+{
+  "date": "April 24, 2026",
+  "top5": [
+    {
+      "rank": 1,
+      "title": "Tariffs will trigger a recession",
+      "reach": "Covering virtually every major financial and general news outlet simultaneously — CNN, JPMorgan research, Wall Street Journal, Bloomberg — spiking again this week as businesses begin passing tariff costs to consumers after absorbing them through 2025.",
+      "the_fear": "Trump's tariffs will push prices high enough and consumer confidence low enough to tip the US economy into recession in 2026.",
+      "why_contested": "Recession odds among economists range from 20% to 50% depending on the model and assumptions used. The US economy has been perpetually on the verge of recession for years without entering one. Businesses absorbed roughly 80% of tariff costs in 2025, but that ratio is shifting — and nobody agrees how fast or how far.",
+      "case_for": "Eight of the past nine recessions followed oil price spikes, and oil is elevated now. JPMorgan estimates businesses will flip from absorbing 80% to passing 80% of tariff costs to consumers — a shock that could rapidly suppress spending. Goldman Sachs projects inflation rising 0.3 points in just the first half of 2026.",
+      "case_against": "Most forecasters project 2% GDP growth — slow, not negative. Tax cuts from recent legislation are injecting fiscal stimulus. A Supreme Court ruling could invalidate the IEEPA tariffs entirely, reversing the shock almost overnight. Recession has been called every year for eight years; it arrived only once.",
+      "questions": [
+        "Are the economists warning of recession the same ones who missed the last several near-misses — and does that matter?",
+        "If the Supreme Court strikes down the IEEPA tariffs, does the recession fear largely dissolve — or are the structural effects already locked in?",
+        "Who benefits most from sustained recession fear regardless of whether a recession actually occurs?"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Middle East conflict spreading wider",
+      "reach": "Live-blog coverage across Al Jazeera, CBS, Reuters, and BBC throughout the day — spiking with simultaneous reports of Israeli strikes in Lebanon and stalled Iran-US nuclear talks, even as a ceasefire extension was announced.",
+      "the_fear": "The conflict between Israel, Lebanon, and Iran is escalating toward a broader regional war that could draw in the United States.",
+      "why_contested": "Today's news includes both a ceasefire extension and continued strikes — two contradictory signals running simultaneously. Whether this represents genuine escalation or managed tensions with ceasefire guardrails is genuinely unclear. Stalled talks is normal diplomatic friction; it does not mean collapse.",
+      "case_for": "Israeli strikes are ongoing despite a ceasefire framework. A Lebanese journalist was killed today. Iran-US nuclear talks breaking down removes a key de-escalation pathway. A Strait of Hormuz ship attack earlier this week signals active Iranian pressure on global oil supply.",
+      "case_against": "Trump announced a 3-week ceasefire extension today — a concrete de-escalation step. Both the US and Iran have strong economic incentives to avoid direct confrontation. The live war framing by outlets is a continuous engagement format that structurally overstates day-to-day escalation.",
+      "questions": [
+        "Is today's news materially different from last week's — or does the live-blog format make ongoing conflict feel like new escalation?",
+        "What would a genuine off-ramp look like, and are any of today's parties moving toward or away from it?",
+        "How much of the fear of US involvement is based on current signals versus historical pattern-matching?"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Immigration enforcement threatens communities",
+      "reach": "Circulating across mainstream outlets following the Senate budget resolution funding ICE and Border Patrol through the end of Trump's term — framed by some as a security measure, by others as a threat to immigrant communities.",
+      "the_fear": "Expanded, permanently funded ICE and Border Patrol operations will lead to mass deportations that harm families, destabilize communities, and remove workers the economy depends on.",
+      "why_contested": "The scale, targeting, and actual implementation of enforcement operations is genuinely unknown. Studies show immigrants commit crimes at lower rates than native-born citizens on average — but local impacts in high-arrival areas are less studied. Economic effects of reduced immigration are modeled very differently across institutions.",
+      "case_for": "Permanent multi-year funding gives enforcement agencies unusual operational continuity. Deloitte projects net immigration dropping dramatically through 2030 — a labor supply shock that raises prices in construction and agriculture. Families with mixed legal status face documented psychological and economic harm from enforcement uncertainty.",
+      "case_against": "Border Patrol funding has been a routine budget item across administrations; a budget resolution is not the same as a deployment order. Enforcement is constrained by courts, logistics, and political cost regardless of funding levels. Rhetoric about mass deportation has historically outpaced operational reality.",
+      "questions": [
+        "What is the actual gap between funded capacity and deployed enforcement — historically and now?",
+        "Are the communities most affected by this policy the ones shaping how it is being covered?",
+        "What would you need to see to update your view — in either direction?"
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Federal Reserve independence eroding",
+      "reach": "Spiking today with the Justice Department dropping its probe into Fed Chair Powell — reviving months of coverage about grand jury subpoenas, a federal judge's rebuke, and a sudden withdrawal.",
+      "the_fear": "The executive branch's attempt to pressure the Federal Reserve through criminal investigation signals that central bank independence is being systematically eroded.",
+      "why_contested": "A federal judge explicitly found the subpoenas were pretextual pressure to lower rates — a serious finding. But the probe was dropped, which could mean the legal system held or that the pressure succeeded in other ways. Whether this is a one-off overreach or a durable shift in executive-Fed relations is genuinely unresolved.",
+      "case_for": "A sitting federal judge found the subpoenas were issued as pretext to pressure an independent institution — that is extraordinary. If that pattern can be initiated without consequence, it creates a template for future administrations. Markets price in Fed independence; erosion of that expectation has real economic effects.",
+      "case_against": "The probe was dropped — the legal guardrails held. Powell remains in office and the Fed still sets rates independently. Tension between presidents and Fed chairs is as old as the institution; Nixon pressured Arthur Burns far more successfully. This episode may be noise, not signal.",
+      "questions": [
+        "Did the probe being dropped mean the courts protected the institution — or that the pressure had already achieved its effect through chilling and delay?",
+        "What would genuine erosion of Fed independence look like versus theatrical conflict, and which does this resemble more?",
+        "Does the history of executive-Fed tension change your read on whether this episode is uniquely dangerous?"
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Public spaces increasingly dangerous",
+      "reach": "The Mall of Louisiana shooting is circulating nationally across NBC, AP, and local outlets — joining a persistent media pattern of prominent coverage of shootings in public commercial spaces regardless of underlying crime trend data.",
+      "the_fear": "Shootings in everyday public spaces like malls are becoming more common, making ordinary activities feel dangerous.",
+      "why_contested": "The Louisiana incident involved two groups who fired at each other — not random public violence — yet it is covered identically to mass casualty events. US violent crime rates have fallen dramatically since the 1990s, yet public perception of crime has moved in the opposite direction for decades.",
+      "case_for": "Mass shooting incidents at public venues have increased by specific metrics even as overall violent crime has declined — the categories are not identical. Bystander risk in targeted group conflicts is real regardless of intent. People have a right to accurate information about where violence occurs.",
+      "case_against": "Polls consistently show Americans believe crime is rising during periods when it is falling — a gap directly attributable to media selection effects. The Louisiana shooting was a targeted conflict between known parties, not random public violence, yet it generates identical fear responses. National coverage of local incidents distorts geographic risk perception severely.",
+      "questions": [
+        "If you learned crime in your specific area had dropped over the last decade, would that change how safe you feel — or has media coverage already set your baseline?",
+        "Is your fear of public spaces calibrated to where you actually live and go, or to a national composite built from everywhere?",
+        "What would it mean to cover this incident accurately — and what would that coverage look like?"
+      ]
+    }
+  ],
+  "honorable_mentions": [
+    {
+      "title": "Pharmaceutical tariffs looming",
+      "summary": "Reports that tariffs on pharmaceuticals could reach 200% by late 2026 are circulating in health and business media, with significant uncertainty about scope and timing."
+    },
+    {
+      "title": "AI displacing knowledge workers",
+      "summary": "Ongoing coverage of AI capability gains is sustaining ambient fear of white-collar job loss, with economists sharply divided on displacement timelines and scale."
+    },
+    {
+      "title": "Government bailout of Spirit Airlines",
+      "summary": "A possible $500M federal rescue with 90% government ownership is framed by some as corporate welfare precedent, by others as necessary infrastructure protection."
+    },
+    {
+      "title": "Classified intelligence misuse",
+      "summary": "The Maduro raid betting charge raises fears about insider trading on classified operations, with debate over how systemic the problem is versus an isolated incident."
+    },
+    {
+      "title": "Teen mental health and screens",
+      "summary": "Persistent background coverage linking social media to youth mental health crises continues, with effect sizes and causality still actively debated in the research literature."
+    }
+  ]
+}
