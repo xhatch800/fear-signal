@@ -1,37 +1,23 @@
 import anthropic
 import json
 import os
+import sys
 import time
 from datetime import datetime
+
+def log(msg):
+    print(msg, flush=True)
+    sys.stderr.write(msg + "\n")
+    sys.stderr.flush()
 
 client = anthropic.Anthropic()
 today = datetime.now().strftime("%B %d, %Y")
 
-print(f"Running analysis for {today}...")
+log(f"START: Running analysis for {today}")
 
-def call(messages, use_search=False, max_retries=5):
-    for attempt in range(max_retries):
-        try:
-            kwargs = dict(model="claude-haiku-4-5", max_tokens=2000, messages=messages)
-            if use_search:
-                kwargs["tools"] = [{"type": "web_search_20250305", "name": "web_search"}]
-            resp = client.messages.create(**kwargs)
-            return resp
-        except anthropic.RateLimitError as e:
-            wait = 45 * (attempt + 1)
-            print(f"  Rate limited (attempt {attempt+1}). Waiting {wait}s... error: {e}")
-            time.sleep(wait)
-        except Exception as e:
-            print(f"  API error (attempt {attempt+1}): {e}")
-            time.sleep(15)
-    raise RuntimeError("All retries exhausted")
+PROMPT = f"""Today is {today}. Search today's news headlines and identify 5 widely circulating contested fears where reasonable people disagree about the threat level. Also list 5 brief honorable mentions.
 
-# Single prompt that searches AND returns JSON directly
-PROMPT = f"""Today is {today}.
-
-Search today's news. Find 5 widely circulating contested fears where reasonable people disagree. Also find 5 more brief ones.
-
-You MUST respond with ONLY a JSON object. No text before or after. No markdown. No backticks. Begin your response with {{ and end with }}.
+Respond ONLY with a JSON object. Start with {{ and end with }}. No markdown, no backticks, no explanation:
 
 {{
   "date": "{today}",
@@ -39,12 +25,12 @@ You MUST respond with ONLY a JSON object. No text before or after. No markdown. 
     {{
       "rank": 1,
       "title": "4-6 word neutral title",
-      "reach": "One sentence on how widely this is circulating.",
-      "the_fear": "One neutral sentence stating the fear.",
-      "why_contested": "Two sentences on genuine uncertainty.",
+      "reach": "One sentence on circulation.",
+      "the_fear": "One neutral sentence.",
+      "why_contested": "Two sentences on uncertainty.",
       "case_for": "One sentence why some find it legitimate.",
       "case_against": "One sentence why others find it exaggerated.",
-      "questions": ["Reflection question 1?", "Reflection question 2?", "Reflection question 3?"]
+      "questions": ["Question 1?", "Question 2?", "Question 3?"]
     }}
   ],
   "honorable_mentions": [
@@ -53,43 +39,57 @@ You MUST respond with ONLY a JSON object. No text before or after. No markdown. 
 }}"""
 
 messages = [{"role": "user", "content": PROMPT}]
+all_text = []
 
-text = ""
 for turn in range(10):
-    resp = call(messages, use_search=True)
-    print(f"Turn {turn}: stop={resp.stop_reason} types={[b.type for b in resp.content]}")
-    
-    messages.append({"role": "assistant", "content": resp.content})
-    
-    # Collect any text blocks
+    for attempt in range(4):
+        try:
+            resp = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=2500,
+                tools=[{"type": "web_search_20250305", "name": "web_search"}],
+                messages=messages,
+            )
+            break
+        except anthropic.RateLimitError:
+            wait = 40 * (attempt + 1)
+            log(f"  Rate limited, waiting {wait}s...")
+            time.sleep(wait)
+    else:
+        raise RuntimeError("Rate limit retries exhausted")
+
+    block_types = [b.type for b in resp.content]
+    log(f"Turn {turn}: stop={resp.stop_reason} blocks={block_types}")
+
     for block in resp.content:
-        if hasattr(block, 'text') and block.text.strip():
-            text += block.text
-            print(f"  Got text block: {repr(block.text[:150])}")
-    
+        t = getattr(block, 'text', None)
+        if t and t.strip():
+            log(f"  TEXT: {repr(t[:200])}")
+            all_text.append(t)
+
+    messages.append({"role": "assistant", "content": resp.content})
+
     if resp.stop_reason == "end_turn":
+        log("  end_turn reached")
         break
 
-print(f"Total text collected: {len(text)} chars")
-print(f"First 300 chars: {repr(text[:300])}")
+combined = " ".join(all_text).strip()
+log(f"Total text: {len(combined)} chars")
 
-if not text.strip():
-    raise ValueError("No text returned from API after all turns")
+if not combined:
+    raise ValueError("No text returned from API")
 
-# Extract JSON
-text = text.strip()
-start = text.find("{")
-end = text.rfind("}") + 1
+start = combined.find("{")
+end = combined.rfind("}") + 1
 if start == -1 or end <= 1:
-    raise ValueError(f"No JSON object found. Got: {repr(text[:300])}")
+    raise ValueError(f"No JSON found. Raw: {repr(combined[:400])}")
 
-raw = text[start:end]
-print(f"Extracted JSON ({len(raw)} chars), parsing...")
+raw = combined[start:end]
+log(f"Parsing JSON ({len(raw)} chars)...")
 
 parsed = json.loads(raw)
-
 os.makedirs("data", exist_ok=True)
 with open("data/today.json", "w") as f:
     json.dump(parsed, f, indent=2)
 
-print(f"SUCCESS. Saved {len(parsed.get('top5', []))} fears to data/today.json")
+log(f"SUCCESS: Saved {len(parsed.get('top5', []))} fears to data/today.json")
