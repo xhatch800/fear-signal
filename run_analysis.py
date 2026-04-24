@@ -40,7 +40,7 @@ messages = [{"role": "user", "content": PROMPT}]
 for attempt in range(5):
     response = client.messages.create(
         model="claude-sonnet-4-5",
-        max_tokens=2000,
+        max_tokens=4000,
         tools=[{"type": "web_search_20250305", "name": "web_search"}],
         messages=messages
     )
