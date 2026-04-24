@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fear Signal — Daily Contested Fear Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --surface: #ffffff;
+      --surface2: #f4f3ef;
+      --border: rgba(0,0,0,0.1);
+      --border2: rgba(0,0,0,0.18);
+      --text: #1a1a18;
+      --text2: #555550;
+      --text3: #999990;
+      --accent: #3a3a35;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Masthead */
+    .masthead {
+      border-bottom: 0.5px solid var(--border2);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 8px;
+    }
+    .site-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .site-tagline {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 14px;
+    }
+    .meta-row {
+      font-size: 12px;
+      color: var(--text3);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .meta-sep { opacity: 0.4; }
+
+    /* Notice */
+    .notice {
+      background: var(--surface2);
+      border-left: 2px solid var(--border2);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 16px;
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 1rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 0.5px solid var(--border2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .rank {
+      font-size: 11px;
+      color: var(--text3);
+      margin-bottom: 6px;
+    }
+    .fear-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+    .row { margin-bottom: 1rem; }
+    .row-label {
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 5px;
+    }
+    .row-body {
+      font-size: 13.5px;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+    .sides {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    @media (max-width: 540px) { .sides { grid-template-columns: 1fr; } }
+    .side {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .side-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text3);
+      margin-bottom: 6px;
+    }
+    .side-body {
+      font-size: 12.5px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+    .qs { list-style: none; margin-top: 5px; }
+    .qs li {
+      font-size: 13.5px;
+      color: var(--text2);
+      padding: 6px 0;
+      border-top: 0.5px solid var(--border);
+      line-height: 1.55;
+    }
+    .qs li::before { content: "→ "; color: var(--text3); }
+
+    /* Honorable mentions */
+    .honorable {
+      background: var(--surface2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 0;
+    }
+    .hon-item {
+      font-size: 13.5px;
+      color: var(--text2);
+      padding: 8px 0;
+      border-top: 0.5px solid var(--border);
+      line-height: 1.55;
+    }
+    .hon-item:first-child { border-top: none; padding-top: 0; }
+    .hon-name { font-weight: 500; color: var(--text); }
+
+    /* Loading / error */
+    .loading {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--text3);
+      font-size: 14px;
+    }
+    .error {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text2);
+      font-size: 13px;
+      border: 0.5px solid var(--border2);
+      border-radius: 12px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+      font-size: 12px;
+      color: var(--text3);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <p class="eyebrow">Fear Signal</p>
+    <h1 class="site-title">Today's Contested Fears</h1>
+    <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
+    <div class="meta-row">
+      <span id="display-date">Loading...</span>
+      <span class="meta-sep">·</span>
+      <span>Updated daily via Claude AI + live news search</span>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith. This analysis reflects AI judgment and can be wrong, especially on contested topics.
+  </div>
+
+  <p class="section-label">Top 5 contested fears today</p>
+  <div id="cards-area"><div class="loading">Loading today's analysis...</div></div>
+
+  <div id="honorable-area"></div>
+
+  <footer>
+    Fear Signal is an independent project exploring fear-based messaging in media.<br>
+    Analysis is generated once daily by Claude AI (Anthropic) using live news search.<br>
+    It reflects AI judgment — treat it as a starting point, not a verdict.
+  </footer>
+
+</div>
+
+<script>
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  async function load() {
+    try {
+      const res = await fetch('data/today.json');
+      if (!res.ok) throw new Error('No data file found');
+      const data = await res.json();
+
+      document.getElementById('display-date').textContent = data.date || 'Today';
+
+      const cards = (data.top5 || []).map(item => `
+        <div class="card">
+          <div class="rank">#${item.rank} most pervasive today</div>
+          <h2 class="fear-title">${esc(item.title)}</h2>
+          <div class="row">
+            <div class="row-label">📊 Reach</div>
+            <div class="row-body">${esc(item.reach)}</div>
+          </div>
+          <div class="row">
+            <div class="row-label">🚩 The fear</div>
+            <div class="row-body">${esc(item.the_fear)}</div>
+          </div>
+          <div class="row">
+            <div class="row-label">🔍 Why it's contested</div>
+            <div class="row-body">${esc(item.why_contested)}</div>
+          </div>
+          <div class="row">
+            <div class="row-label">⚖️ The strongest cases</div>
+            <div class="sides">
+              <div class="side">
+                <div class="side-label">Why some find it legitimate</div>
+                <div class="side-body">${esc(item.case_for)}</div>
+              </div>
+              <div class="side">
+                <div class="side-label">Why others find it exaggerated</div>
+                <div class="side-body">${esc(item.case_against)}</div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:0">
+            <div class="row-label">🪞 Questions worth sitting with</div>
+            <ul class="qs">${(item.questions || []).map(q => `<li>${esc(q)}</li>`).join('')}</ul>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('cards-area').innerHTML = cards;
+
+      const mentions = data.honorable_mentions || [];
+      if (mentions.length) {
+        document.getElementById('honorable-area').innerHTML = `
+          <p class="section-label" style="margin-top:2.5rem">Also circulating today</p>
+          <div class="honorable">
+            ${mentions.map(m => `<div class="hon-item"><span class="hon-name">${esc(m.title)}</span> — ${esc(m.summary)}</div>`).join('')}
+          </div>`;
+      }
+
+    } catch(e) {
+      document.getElementById('cards-area').innerHTML = `
+        <div class="error">
+          Today's analysis is not yet available.<br>
+          Check back after 8am — the daily update runs automatically each morning.<br><br>
+          <small>${esc(e.message)}</small>
+        </div>`;
+    }
+  }
+
+  load();
+</script>
+</body>
+</html>
+HTMLEOF
