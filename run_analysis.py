@@ -53,16 +53,43 @@ Respond ONLY with valid JSON, no markdown, no preamble, no explanation:
 
 print(f"Running analysis for {today}...")
 
-response = client.messages.create(
-    model="claude-opus-4-5",
-    max_tokens=3000,
-    tools=[{"type": "web_search_20250305", "name": "web_search"}],
-    messages=[{"role": "user", "content": PROMPT}]
-)
+messages = [{"role": "user", "content": PROMPT}]
 
-text_block = next((b for b in response.content if b.type == "text"), None)
-if not text_block:
-    raise ValueError("No text block returned from API")
+# Loop until we get a final text response (web search may require multiple turns)
+for attempt in range(5):
+    response = client.messages.create(
+        model="claude-opus-4-5",
+        max_tokens=3000,
+        tools=[{"type": "web_search_20250305", "name": "web_search"}],
+        messages=messages
+    )
+
+    # Add assistant response to message history
+    messages.append({"role": "assistant", "content": response.content})
+
+    # If stopped normally, look for text block
+    if response.stop_reason == "end_turn":
+        text_block = next((b for b in response.content if b.type == "text"), None)
+        if text_block and text_block.text.strip():
+            break
+        else:
+            raise ValueError("end_turn reached but no text block found")
+
+    # If more tool use needed, add tool results and continue
+    elif response.stop_reason == "tool_use":
+        tool_results = []
+        for block in response.content:
+            if block.type == "tool_result":
+                tool_results.append(block)
+            # web_search results are handled automatically by the API
+        # Continue the loop — the API will process search results
+        messages.append({"role": "user", "content": tool_results}) if tool_results else None
+        continue
+
+    else:
+        raise ValueError(f"Unexpected stop_reason: {response.stop_reason}")
+else:
+    raise ValueError("Exceeded maximum attempts waiting for final response")
 
 raw = text_block.text.strip().replace("```json", "").replace("```", "").strip()
 parsed = json.loads(raw)
