@@ -4,17 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fear Signal — Daily Contested Fear Analysis</title>
-  
-  <meta name="description" content="Daily analysis of the 5 most widely circulating contested fears in the media.">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "Today's Contested Fears",
-      "author": { "@type": "Organization", "name": "Fear Signal" }
-    }
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -72,14 +61,6 @@
       max-width: 560px;
       margin-bottom: 14px;
     }
-
-    /* Reader Mode Helper: Safari needs to see text on load */
-    .reader-hint {
-      display: none; /* Hidden from users, visible to some scrapers/readers */
-      visibility: hidden;
-      height: 0;
-    }
-
     .meta-row {
       font-size: 12px;
       color: var(--text3);
@@ -90,6 +71,7 @@
     }
     .meta-sep { opacity: 0.4; }
 
+    /* Notice */
     .notice {
       background: var(--surface2);
       border-left: 2px solid var(--border2);
@@ -101,6 +83,7 @@
       margin-bottom: 2.5rem;
     }
 
+    /* Section label */
     .section-label {
       font-size: 11px;
       letter-spacing: 0.1em;
@@ -109,6 +92,7 @@
       margin-bottom: 1rem;
     }
 
+    /* Cards */
     .card {
       background: var(--surface);
       border: 0.5px solid var(--border2);
@@ -174,6 +158,7 @@
     }
     .qs li::before { content: "→ "; color: var(--text3); }
 
+    /* Honorable mentions */
     .honorable {
       background: var(--surface2);
       border-radius: 12px;
@@ -190,6 +175,7 @@
     .hon-item:first-child { border-top: none; padding-top: 0; }
     .hon-name { font-weight: 500; color: var(--text); }
 
+    /* Loading / error */
     .loading {
       text-align: center;
       padding: 4rem 0;
@@ -205,6 +191,7 @@
       border-radius: 12px;
     }
 
+    /* Footer */
     footer {
       margin-top: 4rem;
       padding-top: 1.5rem;
@@ -216,45 +203,35 @@
   </style>
 </head>
 <body>
+<div class="wrap">
 
-<main class="wrap">
-  <article>
-    <header class="masthead">
-      <p class="eyebrow">Fear Signal</p>
-      <h1 class="site-title">Today's Contested Fears</h1>
-      <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
-      
-      <div class="reader-hint">
-        Fear Signal provides a daily, balanced analysis of contested fears currently circulating in global news media. 
-        By examining reach, legitimacy, and counter-arguments, we aim to provide clarity over emotional reaction.
-      </div>
-
-      <div class="meta-row">
-        <time id="display-date">Loading...</time>
-        <span class="meta-sep">·</span>
-        <span>Updated daily via Claude AI + live news search</span>
-      </div>
-    </header>
-
-    <section class="notice">
-      <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith.
-    </section>
-
-    <p class="section-label">Top 5 contested fears today</p>
-    
-    <div id="cards-area">
-      <div class="loading">Gathering today's analysis...</div>
+  <div class="masthead">
+    <p class="eyebrow">Fear Signal</p>
+    <h1 class="site-title">Today's Contested Fears</h1>
+    <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
+    <div class="meta-row">
+      <span id="display-date">Loading...</span>
+      <span class="meta-sep">·</span>
+      <span>Updated daily via Claude AI + live news search</span>
     </div>
+  </div>
 
-    <div id="honorable-area"></div>
-  </article>
+  <div class="notice">
+    <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith. This analysis reflects AI judgment and can be wrong, especially on contested topics.
+  </div>
+
+  <p class="section-label">Top 5 contested fears today</p>
+  <div id="cards-area"><div class="loading">Loading today's analysis...</div></div>
+
+  <div id="honorable-area"></div>
 
   <footer>
     Fear Signal is an independent project exploring fear-based messaging in media.<br>
     Analysis is generated once daily by Claude AI (Anthropic) using live news search.<br>
     It reflects AI judgment — treat it as a starting point, not a verdict.
   </footer>
-</main>
+
+</div>
 
 <script>
   function esc(s) {
@@ -270,7 +247,7 @@
       document.getElementById('display-date').textContent = data.date || 'Today';
 
       const cards = (data.top5 || []).map(item => `
-        <section class="card">
+        <div class="card">
           <div class="rank">#${item.rank} most pervasive today</div>
           <h2 class="fear-title">${esc(item.title)}</h2>
           <div class="row">
@@ -302,7 +279,7 @@
             <div class="row-label">🪞 Questions worth sitting with</div>
             <ul class="qs">${(item.questions || []).map(q => `<li>${esc(q)}</li>`).join('')}</ul>
           </div>
-        </section>
+        </div>
       `).join('');
 
       document.getElementById('cards-area').innerHTML = cards;
@@ -330,3 +307,4 @@
 </script>
 </body>
 </html>
+HTMLEOF
