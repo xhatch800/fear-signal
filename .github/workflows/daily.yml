@@ -1,0 +1,35 @@
+name: Daily Fear Analysis
+
+on:
+  schedule:
+    - cron: '0 13 * * *'   # runs every day at 8am Central (13:00 UTC)
+  workflow_dispatch:        # lets you also trigger it manually from GitHub
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Anthropic SDK
+        run: pip install anthropic
+
+      - name: Run fear analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python run_analysis.py
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "Fear Signal Bot"
+          git config user.email "bot@fear-signal"
+          git add data/today.json
+          git diff --cached --quiet || git commit -m "Daily update: $(date +'%Y-%m-%d')"
+          git push
