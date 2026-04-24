@@ -1,30 +1,27 @@
 import anthropic
 import json
 import os
+import time
 from datetime import datetime
 
 client = anthropic.Anthropic()
 
 today = datetime.now().strftime("%B %d, %Y")
 
-PROMPT = f"""You are a calm guide helping people pause before reacting to today's media. Today is {today}.
+PROMPT = f"""Today is {today}. Search the news and identify the 5 most widely circulating contested fears in media right now — where reasonable people genuinely disagree about the threat. Also list 5 honorable mentions.
 
-Use web search to find today's top news. Identify the 5 most widely circulating CONTESTED fears — where reasonable people genuinely disagree about the threat level. Rank by pervasiveness. Also list 5 brief honorable mentions.
-
-For each of the top 5, be concise — 1-2 sentences per field.
-
-Respond ONLY with valid JSON, no markdown, no preamble:
+Respond ONLY with valid JSON, no markdown:
 {{
   "date": "{today}",
   "top5": [
     {{
       "rank": 1,
-      "title": "Neutral title 4-6 words",
-      "reach": "One sentence: which outlets, how widespread.",
+      "title": "Neutral 4-6 word title",
+      "reach": "One sentence on how widely circulating.",
       "the_fear": "One neutral sentence stating the fear.",
-      "why_contested": "2 sentences on genuine uncertainty.",
-      "case_for": "1-2 sentences: why some find it legitimate.",
-      "case_against": "1-2 sentences: why others find it exaggerated.",
+      "why_contested": "Two sentences on genuine uncertainty.",
+      "case_for": "One sentence: why some find it legitimate.",
+      "case_against": "One sentence: why others find it exaggerated.",
       "questions": ["Question 1?", "Question 2?", "Question 3?"]
     }}
   ],
@@ -35,16 +32,25 @@ Respond ONLY with valid JSON, no markdown, no preamble:
 
 print(f"Running analysis for {today}...")
 
+def run_with_retry(messages, max_retries=4):
+    for attempt in range(max_retries):
+        try:
+            return client.messages.create(
+                model="claude-haiku-4-5",
+                max_tokens=3000,
+                tools=[{"type": "web_search_20250305", "name": "web_search"}],
+                messages=messages
+            )
+        except anthropic.RateLimitError:
+            wait = 30 * (attempt + 1)
+            print(f"Rate limited. Waiting {wait}s before retry {attempt + 1}...")
+            time.sleep(wait)
+    raise RuntimeError("Exceeded retries due to rate limiting")
+
 messages = [{"role": "user", "content": PROMPT}]
 
-for attempt in range(5):
-    response = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=4000,
-        tools=[{"type": "web_search_20250305", "name": "web_search"}],
-        messages=messages
-    )
-
+for attempt in range(6):
+    response = run_with_retry(messages)
     messages.append({"role": "assistant", "content": response.content})
 
     if response.stop_reason == "end_turn":
@@ -53,14 +59,12 @@ for attempt in range(5):
             break
         else:
             raise ValueError("end_turn reached but no text block found")
-
     elif response.stop_reason == "tool_use":
         continue
-
     else:
         raise ValueError(f"Unexpected stop_reason: {response.stop_reason}")
 else:
-    raise ValueError("Exceeded maximum attempts waiting for final response")
+    raise ValueError("Exceeded maximum loop attempts")
 
 raw = text_block.text.strip().replace("```json", "").replace("```", "").strip()
 parsed = json.loads(raw)
