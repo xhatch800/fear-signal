@@ -43,13 +43,10 @@ for turn in range(15):
     messages.append({"role": "assistant", "content": resp.content})
 
     if resp.stop_reason == "end_turn":
-        # Find text block
         for block in resp.content:
             if block.type == "text" and block.text.strip():
                 text = block.text.strip()
                 log("Text: " + repr(text[:120]))
-
-                # Strip markdown fences
                 if "```" in text:
                     for part in text.split("```")[1:]:
                         part = part.strip()
@@ -58,7 +55,6 @@ for turn in range(15):
                         if part.startswith("{"):
                             text = part
                             break
-
                 start = text.find("{")
                 end = text.rfind("}") + 1
                 if start != -1 and end > 1:
@@ -68,15 +64,9 @@ for turn in range(15):
                         break
                     except json.JSONDecodeError as e:
                         log("JSON parse failed: " + str(e))
-
-                # Not JSON yet — nudge the model to produce it
                 log("No JSON found, nudging model...")
-                messages.append({
-                    "role": "user",
-                    "content": "Good. Now respond with ONLY the JSON object based on what you found. No markdown, no backticks, start with { and end with }."
-                })
+                messages.append({"role": "user", "content": "Now respond with ONLY the JSON object. No markdown, no backticks, start with { and end with }."})
                 break
-
         if final_json:
             break
 
@@ -87,4 +77,135 @@ os.makedirs("data", exist_ok=True)
 with open("data/today.json", "w") as f:
     json.dump(final_json, f, indent=2)
 
-log("SUCCESS: Saved " + str(len(final_json.get("top5", []))) + " fears")
+log("JSON saved. Generating HTML...")
+
+def esc(s):
+    return str(s).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace('"',"&quot;")
+
+def render_cards(top5):
+    html = ""
+    for item in top5:
+        qs = "".join(f"<li>{esc(q)}</li>" for q in item.get("questions", []))
+        html += f"""
+        <article class="card">
+          <p class="rank">#{item['rank']} most pervasive today</p>
+          <h2>{esc(item['title'])}</h2>
+          <section class="row">
+            <h3>Reach</h3>
+            <p>{esc(item['reach'])}</p>
+          </section>
+          <section class="row">
+            <h3>The fear</h3>
+            <p>{esc(item['the_fear'])}</p>
+          </section>
+          <section class="row">
+            <h3>Why it's contested</h3>
+            <p>{esc(item['why_contested'])}</p>
+          </section>
+          <section class="row">
+            <h3>The strongest cases</h3>
+            <div class="sides">
+              <div class="side">
+                <h4>Why some find it legitimate</h4>
+                <p>{esc(item['case_for'])}</p>
+              </div>
+              <div class="side">
+                <h4>Why others find it exaggerated</h4>
+                <p>{esc(item['case_against'])}</p>
+              </div>
+            </div>
+          </section>
+          <section class="row">
+            <h3>Questions worth sitting with</h3>
+            <ul>{qs}</ul>
+          </section>
+        </article>"""
+    return html
+
+def render_mentions(mentions):
+    items = "".join(f'<li><strong>{esc(m["title"])}</strong> — {esc(m["summary"])}</li>' for m in mentions)
+    return f"<ul class='honorable'>{items}</ul>"
+
+cards_html = render_cards(final_json.get("top5", []))
+mentions_html = render_mentions(final_json.get("honorable_mentions", []))
+date_str = esc(final_json.get("date", today))
+
+html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fear Signal — {date_str}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    :root {{
+      --bg: #fafaf8; --surface: #ffffff; --surface2: #f4f3ef;
+      --border: rgba(0,0,0,0.1); --border2: rgba(0,0,0,0.18);
+      --text: #1a1a18; --text2: #555550; --text3: #999990;
+    }}
+    body {{ font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }}
+    .wrap {{ max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }}
+    header {{ border-bottom: 0.5px solid var(--border2); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }}
+    .eyebrow {{ font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }}
+    h1 {{ font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600; line-height: 1.15; margin-bottom: 10px; }}
+    .site-tagline {{ font-size: 14px; color: var(--text2); line-height: 1.65; max-width: 560px; margin-bottom: 14px; }}
+    .meta-row {{ font-size: 12px; color: var(--text3); }}
+    .notice {{ background: var(--surface2); border-left: 2px solid var(--border2); border-radius: 0 6px 6px 0; padding: 10px 16px; font-size: 12px; color: var(--text2); line-height: 1.6; margin-bottom: 2.5rem; }}
+    .section-label {{ font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 1rem; }}
+    .card {{ background: var(--surface); border: 0.5px solid var(--border2); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }}
+    .rank {{ font-size: 11px; color: var(--text3); margin-bottom: 6px; }}
+    .card h2 {{ font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; line-height: 1.3; margin-bottom: 1.25rem; }}
+    .row {{ margin-bottom: 1rem; }}
+    .row h3 {{ font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); margin-bottom: 5px; font-weight: 400; }}
+    .row p, .row li {{ font-size: 13.5px; color: var(--text2); line-height: 1.7; }}
+    .sides {{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }}
+    @media (max-width: 540px) {{ .sides {{ grid-template-columns: 1fr; }} }}
+    .side {{ background: var(--surface2); border-radius: 8px; padding: 12px 14px; }}
+    .side h4 {{ font-size: 11px; font-weight: 500; color: var(--text3); margin-bottom: 6px; }}
+    .side p {{ font-size: 12.5px; color: var(--text2); line-height: 1.65; }}
+    .row ul {{ list-style: none; margin-top: 5px; padding: 0; }}
+    .row ul li {{ font-size: 13.5px; color: var(--text2); padding: 6px 0; border-top: 0.5px solid var(--border); line-height: 1.55; }}
+    .row ul li::before {{ content: "\\2192  "; color: var(--text3); }}
+    .honorable {{ list-style: none; background: var(--surface2); border-radius: 12px; padding: 1.25rem 1.5rem; }}
+    .honorable li {{ font-size: 13.5px; color: var(--text2); padding: 8px 0; border-top: 0.5px solid var(--border); line-height: 1.55; }}
+    .honorable li:first-child {{ border-top: none; padding-top: 0; }}
+    footer {{ margin-top: 4rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text3); line-height: 1.7; }}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Fear Signal</p>
+    <h1>Today's Contested Fears</h1>
+    <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
+    <p class="meta-row">{date_str} · Updated daily via Claude AI + live news search</p>
+  </header>
+
+  <div class="notice">
+    <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith. This analysis reflects AI judgment and can be wrong, especially on contested topics.
+  </div>
+
+  <p class="section-label">Top 5 contested fears today</p>
+
+  <main>
+    {cards_html}
+
+    <p class="section-label" style="margin-top:2.5rem">Also circulating today</p>
+    {mentions_html}
+  </main>
+
+  <footer>
+    Fear Signal is an independent project exploring fear-based messaging in media.<br>
+    Analysis is generated once daily by Claude AI (Anthropic) using live news search.<br>
+    It reflects AI judgment — treat it as a starting point, not a verdict.
+  </footer>
+</div>
+</body>
+</html>"""
+
+with open("index.html", "w") as f:
+    f.write(html)
+
+log("SUCCESS: index.html written with pre-rendered content")

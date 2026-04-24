@@ -26,10 +26,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python -u run_analysis.py
 
-      - name: Commit and push updated data
+      - name: Commit and push updated files
         run: |
           git config user.name "Fear Signal Bot"
           git config user.email "bot@fear-signal"
-          git add data/today.json
+          git add data/today.json index.html
           git diff --cached --quiet || git commit -m "Daily update: $(date +'%Y-%m-%d')"
           git push
