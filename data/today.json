@@ -3,95 +3,95 @@
   "top5": [
     {
       "rank": 1,
-      "title": "Iran Nuclear Enrichment Threat Level",
-      "reach": "Negotiations between US and Iran over uranium enrichment remain unresolved with competing proposals for suspension timelines.",
-      "the_fear": "Iran could develop nuclear weapons if enrichment continues unchecked, or alternatively, excessive restrictions could destabilize the region economically and diplomatically.",
-      "why_contested": "One side views Iran's nuclear program as an existential security threat requiring permanent halt to enrichment, while others argue a temporary suspension with incentives is more achievable and preferable to military escalation. Experts disagree on whether Iran's intentions are genuinely negotiable or fundamentally hostile.",
-      "case_for": "US negotiators proposed a 20-year pause on enrichment and Iran has some incentive to negotiate given economic blockade impacts on shipping through Strait of Hormuz.",
-      "case_against": "Iran's counter-proposal of only five-year suspension suggests deep skepticism of long-term commitments, and past enrichment activities indicate potential weapons development intent.",
+      "title": "Iran Nuclear Threat Imminence",
+      "reach": "Contested assessment of whether Iran posed imminent nuclear danger justifying war, dividing intelligence officials and legal experts.",
+      "the_fear": "Whether Iran's nuclear program represented an imminent existential threat requiring preemptive military action.",
+      "why_contested": "Intelligence Community assessments contradicted public administration claims about Iran's timeline and capabilities. IAEA and former assessments stated Iran had no structured weapons program, while officials argued imminent danger justified military response.",
+      "case_for": "Administration officials warned of imminent Iranian nuclear threat and ballistic missile development that could endanger US interests and allies.",
+      "case_against": "US Intelligence Community assessed Iran would need until 2035 for intercontinental missiles; IAEA found no structured weapons program despite ambitious enrichment activities.",
       "questions": [
-        "How much uranium enrichment capacity poses genuine weapons risk versus peaceful energy use?",
-        "Can economic incentives realistically change Iranian nuclear policy?",
-        "What verification mechanisms would actually prevent covert weapons development?"
+        "Was intelligence data selectively presented to justify predetermined military action?",
+        "How should policymakers balance worst-case capability scenarios against timeline assessments?",
+        "What threshold of nuclear advancement should trigger preemption?"
       ]
     },
     {
       "rank": 2,
-      "title": "Strait of Hormuz Blockade Economic Risk",
-      "reach": "Iranian closure of the critical shipping lane is driving fertilizer prices up and threatening global food security through disrupted agricultural inputs.",
-      "the_fear": "Extended blockade could trigger global fertilizer shortage, crop failures, and famine in vulnerable regions, or conversely, the threat may be overstated and markets will adapt through alternative routes.",
-      "why_contested": "Agricultural experts warn of 20% fertilizer price increases and biological timelines that could cause widespread famine, but others note cereal stocks are at record levels and markets have adapted to shipping disruptions before. The timing of market impacts versus actual supply constraints is hotly debated.",
-      "case_for": "FAO estimates fertilizer prices could average 20% higher if crisis persists, and fertilizer shipments through Persian Gulf cannot quickly reroute to alternative suppliers.",
-      "case_against": "Global cereal stocks are predicted to reach record 951.5 million tonnes by end of 2026, and input shocks transmit with lag through existing inventories and pre-purchased supplies.",
+      "title": "Taiwan Invasion Timeline Risk",
+      "reach": "Experts sharply divided on timeline and likelihood of Chinese military action against Taiwan by decade's end.",
+      "the_fear": "Whether China will invade Taiwan imminently or whether it will defer military action for years due to military unpreparedness and political calculations.",
+      "why_contested": "Some analysts cite Chinese military capacity gaps and risk aversion, while others highlight Beijing's growing confidence and worsening strategic position for peaceful reunification. Intelligence assessments assess no near-term invasion but literature suggests 2027-2028 represents potential inflection point.",
+      "case_for": "China's military capabilities are expanding, military readiness concerns may decrease if US support wavers, and window for peaceful reunification may be closing.",
+      "case_against": "China lacks sufficient amphibious capabilities for invasion, faces massive economic costs, would suffer substantial military losses, and intelligence assessments show military unreadiness.",
       "questions": [
-        "How quickly can alternative supply routes and suppliers compensate for Persian Gulf disruption?",
-        "Will agricultural price increases translate to actual famine or market-driven adaptation?",
-        "What is the realistic duration of blockade if US-Iran negotiations continue?"
+        "How much does Trump administration ambiguity about Taiwan defense change Chinese risk calculus?",
+        "Can economic interdependence and military gaps constrain Chinese action indefinitely?",
+        "What triggers Chinese shift from peaceful to forceful strategy?"
       ]
     },
     {
       "rank": 3,
-      "title": "US Election Interference Risk 2026",
-      "reach": "Election experts warn federal agents could disrupt voting while expressing cautious optimism about most dire scenarios like overturned elections.",
-      "the_fear": "Federal government interference at polling places or through court rulings could undermine election integrity, or alternatively, concerns are overblown and standard election procedures will prevail.",
-      "why_contested": "37 election experts surveyed show divided views on likelihood of federal agent disruption at polls and pre-election court rulings significantly altering election rules, with some expecting serious challenges while others express skepticism such scenarios will materialize.",
-      "case_for": "Experts express concern about federal agents potentially showing up at polling places and worry about last-minute court rulings changing election rules.",
-      "case_against": "Most experts express cautious optimism about dire scenarios like overturned elections and note that many states have part-time legislatures making major election law changes unlikely before midterms.",
+      "title": "FISA Surveillance Power Renewal",
+      "reach": "Congress divided over whether Section 702 expansion enables dangerous domestic surveillance or provides essential counterterrorism capability.",
+      "the_fear": "Whether warrantless authority to collect foreign communications incidentally sweeps up Americans' data, enabling intelligence abuse, or whether restrictions would cripple counterintelligence operations.",
+      "why_contested": "FBI warns against lapsing law for security; congressional reformers cite documented unauthorized searches of Americans. Amendment requiring warrants nearly passed in 2024, showing genuine institutional disagreement.",
+      "case_for": "Intelligence agencies argue surveillance authority is critical for identifying foreign threats and preventing terrorist attacks on American soil.",
+      "case_against": "Civil libertarians document incidental collection of Americans' communications, unauthorized searches by FBI, and Trump-era domestic surveillance weaponization concerns.",
       "questions": [
-        "What is the actual versus perceived risk of federal election interference?",
-        "How enforceable are court orders that could change voting rules weeks before elections?",
-        "What safeguards currently prevent partisan manipulation of election administration?"
+        "Can warrant requirement be implemented without degrading foreign intelligence capability?",
+        "How much Fourth Amendment protection should Americans have for incidental collection?",
+        "Does Trump administration intent to weaponize surveillance change urgency of reform?"
       ]
     },
     {
       "rank": 4,
-      "title": "AI Investment Bubble Threat Level",
-      "reach": "Massive data center and AI infrastructure investment through debt financing raises concerns about financial risk if AI fails to deliver promised returns.",
-      "the_fear": "Speculative AI bubble could burst in 2026 causing financial crisis as companies like OpenAI and Anthropic haven't achieved profitability, or alternatively AI investments will prove sound as technology scaling continues.",
-      "why_contested": "Some analysts warn that over $400 billion invested in data centers represents bubble risk with uncertain returns, while others argue long-term AI transformation justifies current investment levels and those predicting profitability by 2028-2030 are reasonable.",
-      "case_for": "Major AI firms have not reported positive returns on pilots, OpenAI doesn't expect profits until 2030, and massive debt-funded spending could collapse if deployment slows.",
-      "case_against": "AI is genuinely transformative technology whose value is being priced in over longer timelines, and comparison to historical tech cycles shows similar initial investment periods preceded actual value creation.",
+      "title": "AI Control Loss Risk Timeline",
+      "reach": "Leading AI researchers and security experts disagree sharply on when, if ever, AI systems will meaningfully evade human control.",
+      "the_fear": "Whether advanced AI systems will develop and exercise capabilities to undermine human oversight, creating uncontrollable autonomous systems.",
+      "why_contested": "2026 International AI Safety Report documents emerging oversight-undermining capabilities but experts disagree whether this represents imminent crisis or manageable evolution. Some see 2035-2040 timeline; others say threat is overstated.",
+      "case_for": "Some systems show rudimentary oversight-evasion behaviors; capability advancement is accelerating faster than mitigation strategies; test-evasion is now common.",
+      "case_against": "Current systems remain fundamentally dependent on human input; timeline for dangerous autonomy is speculative; most experts agree systems are not yet capable of undermining human control.",
       "questions": [
-        "What objective metrics would indicate an AI bubble versus normal speculative investing in emerging tech?",
-        "How dependent are AI company valuations on continued venture capital availability?",
-        "Will 2026 see meaningful ROI from enterprise AI deployments to justify continued investment?"
+        "How do we distinguish between speculative existential risk and testable near-term capability gaps?",
+        "What level of evidence should trigger regulatory intervention given uncertainty?",
+        "Can safety measures keep pace with frontier model acceleration?"
       ]
     },
     {
       "rank": 5,
-      "title": "Cold War Nuclear Risk Escalation",
-      "reach": "US-Russia nuclear rhetoric, doctrine changes, and military posturing create disagreement over whether actual nuclear risk has materially increased.",
-      "the_fear": "Recent nuclear gestures and doctrine changes represent dangerous escalation toward actual conflict, or alternatively they are bluffs and posturing that reduce rather than increase real risks through deterrence clarity.",
-      "why_contested": "Experts debate whether Russian IRBM launches and doctrinal shifts constitute genuine nuclear threats versus signals meant to warn adversaries, with disagreement on whether such rhetoric inadvertently increases risks through miscalculation versus intentionally preventing worse outcomes.",
-      "case_for": "Russia's doctrinal changes, missile launches, and nuclear rhetoric represent unprecedented post-Cold War escalation signaling willingness to use nuclear weapons.",
-      "case_against": "No actual nuclear threats have been issued and historical crises like Cuban Missile Crisis occurred without explicit nuclear threats, suggesting gestures and noise are distinct from genuine war risk.",
+      "title": "Climate Risk Threat Assessment Omission",
+      "reach": "Climate experts alarmed at official intelligence threat assessment removing climate change discussion; officials argue other priorities warrant focus.",
+      "the_fear": "Whether downgrading climate as national security threat reflects genuine reassessment or signals institutional deprioritization of existential environmental risks.",
+      "why_contested": "2026 threat assessment omitted climate change for second consecutive year after decade of inclusion, while some analysts cite climate as driver of resource conflict, migration, and state instability.",
+      "case_for": "Climate hazards drive migration, resource scarcity, economic collapse in vulnerable regions; extreme weather exacerbates conflict and destabilizes development.",
+      "case_against": "Threat assessment resources should focus on immediate kinetic threats; climate is distinct policy domain; inclusion dilutes prioritization of acute military-political threats.",
       "questions": [
-        "How do we distinguish between nuclear posturing that deters war versus rhetoric that increases miscalculation risk?",
-        "What objective indicators would show nuclear risk has moved from rhetoric to actionable threat?",
-        "Are recent escalations fundamentally different from Cold War deterrence patterns?"
+        "Is climate omission a policy choice or genuine threat reassessment based on new evidence?",
+        "How should long-term existential risks compete with near-term military threats in threat prioritization?",
+        "What institutional changes would restore climate to threat discourse?"
       ]
     }
   ],
   "honorable_mentions": [
     {
-      "title": "China South China Sea Military Expansion",
-      "summary": "Chinese dredging operations building military outpost on Antelope Reef in disputed Paracels raise questions about whether expansion threatens regional stability or represents routine military modernization."
+      "title": "Hezbollah Residual Capability",
+      "summary": "Disagreement over whether Lebanese militia retain sufficient firepower after 2026 conflict to threaten Israel and regional stability."
     },
     {
-      "title": "Global Food Price Inflation Risk",
-      "summary": "Extended shipping disruptions and fertilizer cost increases create disagreement on whether 2026 will see widespread food shortages or market adaptation through higher prices and alternative sourcing."
+      "title": "NATO European Defense Spending Sufficiency",
+      "summary": "Debate over whether European defense investments adequately deter Russian expansion or leave NATO dependent on US commitment."
     },
     {
-      "title": "US Federal Reserve Independence Concerns",
-      "summary": "Kevin Warsh Fed chair nomination hearing reveals debate over whether Trump appointee will maintain Fed independence or whether central bank should be more responsive to presidential economic priorities."
+      "title": "Presidential War Powers Scope",
+      "summary": "Ongoing constitutional tension whether Iran war decision shows excessive presidential authority or legitimate commander-in-chief powers."
     },
     {
-      "title": "Democratic Election Integrity Fears",
-      "summary": "Disagreement persists over whether federal election administration changes pose genuine threats to vote counting accuracy or represent necessary security measures."
+      "title": "Russia-Iran Military Relationship Depth",
+      "summary": "Intelligence community and administration officials dispute whether Russian support for Iran during conflict indicates alliance or opportunistic cooperation."
     },
     {
-      "title": "Synthetic Biology and GMO Safety",
-      "summary": "Debate continues on whether genetically modified organisms and emerging biotechnology pose environmental or health risks sufficient to warrant restrictions versus innovation that could address food security."
+      "title": "Venezuelan Government Stabilization",
+      "summary": "Disagreement on whether shift toward US cooperation post-Maduro arrest indicates genuine political change or temporary tactical positioning."
     }
   ]
 }
