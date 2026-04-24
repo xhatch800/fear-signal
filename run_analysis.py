@@ -9,119 +9,87 @@ today = datetime.now().strftime("%B %d, %Y")
 
 print(f"Running analysis for {today}...")
 
-def api_call_with_search(prompt, max_retries=4):
-    """Single call with web search — handles all turn-taking internally."""
+def call(messages, use_search=False, max_retries=5):
     for attempt in range(max_retries):
         try:
-            # Use streaming to get full response including after tool use
-            messages = [{"role": "user", "content": prompt}]
-            
-            # Keep looping until end_turn
-            for _ in range(10):
-                resp = client.messages.create(
-                    model="claude-haiku-4-5",
-                    max_tokens=3000,
-                    tools=[{"type": "web_search_20250305", "name": "web_search"}],
-                    messages=messages,
-                )
-                
-                # Log what we got
-                print(f"  Response: stop={resp.stop_reason} blocks={[b.type for b in resp.content]}")
-                
-                # Append assistant turn
-                messages.append({"role": "assistant", "content": resp.content})
-                
-                if resp.stop_reason == "end_turn":
-                    # Find any text block
-                    for block in resp.content:
-                        if hasattr(block, 'text') and block.text.strip():
-                            return block.text
-                    # No text — shouldn't happen but handle it
-                    print("  end_turn but no text block, continuing...")
-                    return None
-                
-                # For tool_use or any other reason, just continue the loop
-                # The web search tool handles its own results server-side
-                # We just need to pass back the assistant message and continue
-                # No user tool_result needed for web_search_20250305
-                
-            return None
-            
-        except anthropic.RateLimitError:
-            wait = 30 * (attempt + 1)
-            print(f"Rate limited. Waiting {wait}s...")
+            kwargs = dict(model="claude-haiku-4-5", max_tokens=2000, messages=messages)
+            if use_search:
+                kwargs["tools"] = [{"type": "web_search_20250305", "name": "web_search"}]
+            resp = client.messages.create(**kwargs)
+            return resp
+        except anthropic.RateLimitError as e:
+            wait = 45 * (attempt + 1)
+            print(f"  Rate limited (attempt {attempt+1}). Waiting {wait}s... error: {e}")
             time.sleep(wait)
-    raise RuntimeError("Exceeded retries")
+        except Exception as e:
+            print(f"  API error (attempt {attempt+1}): {e}")
+            time.sleep(15)
+    raise RuntimeError("All retries exhausted")
 
-def api_call_plain(prompt, max_retries=4):
-    """Simple call with no tools."""
-    for attempt in range(max_retries):
-        try:
-            resp = client.messages.create(
-                model="claude-haiku-4-5",
-                max_tokens=3000,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            for block in resp.content:
-                if hasattr(block, 'text') and block.text.strip():
-                    return block.text
-            return ""
-        except anthropic.RateLimitError:
-            wait = 30 * (attempt + 1)
-            print(f"Rate limited. Waiting {wait}s...")
-            time.sleep(wait)
-    raise RuntimeError("Exceeded retries")
+# Single prompt that searches AND returns JSON directly
+PROMPT = f"""Today is {today}.
 
-# Step 1: search and summarise
-SEARCH_PROMPT = f"""Today is {today}. Search the web for today's major news headlines.
+Search today's news. Find 5 widely circulating contested fears where reasonable people disagree. Also find 5 more brief ones.
 
-Then identify and describe the 5 most widely circulating CONTESTED fears in media today — fears where reasonable people genuinely disagree. For each: state the fear, explain why it is contested, give the strongest case it is real, give the strongest case it is exaggerated, and list 3 reflection questions. Also briefly name 5 more fears.
+You MUST respond with ONLY a JSON object. No text before or after. No markdown. No backticks. Begin your response with {{ and end with }}.
 
-Write in plain English. Be thorough."""
-
-summary = api_call_with_search(SEARCH_PROMPT)
-if not summary:
-    raise ValueError("No summary returned from search step")
-
-print(f"Got summary ({len(summary)} chars). First 200: {summary[:200]}")
-
-# Step 2: format as JSON
-FORMAT_PROMPT = f"""Convert this analysis to JSON. Output ONLY the JSON — no markdown, no backticks, no explanation.
-
-Analysis:
-{summary}
-
-JSON format:
 {{
   "date": "{today}",
   "top5": [
     {{
       "rank": 1,
-      "title": "Neutral 4-6 word title",
-      "reach": "One sentence.",
-      "the_fear": "One sentence.",
-      "why_contested": "Two sentences.",
-      "case_for": "One sentence.",
-      "case_against": "One sentence.",
-      "questions": ["Q1?", "Q2?", "Q3?"]
+      "title": "4-6 word neutral title",
+      "reach": "One sentence on how widely this is circulating.",
+      "the_fear": "One neutral sentence stating the fear.",
+      "why_contested": "Two sentences on genuine uncertainty.",
+      "case_for": "One sentence why some find it legitimate.",
+      "case_against": "One sentence why others find it exaggerated.",
+      "questions": ["Reflection question 1?", "Reflection question 2?", "Reflection question 3?"]
     }}
   ],
-  "honorable_mentions": [{{ "title": "Title", "summary": "One sentence." }}]
+  "honorable_mentions": [
+    {{"title": "Short title", "summary": "One sentence."}}
+  ]
 }}"""
 
-raw = api_call_plain(FORMAT_PROMPT)
-print(f"Raw JSON (first 200): {raw[:200]}")
+messages = [{"role": "user", "content": PROMPT}]
 
-raw = raw.strip().replace("```json","").replace("```","").strip()
-start = raw.find("{")
-end = raw.rfind("}") + 1
-if start == -1 or end == 0:
-    raise ValueError(f"No JSON found in: {raw[:300]}")
-raw = raw[start:end]
+text = ""
+for turn in range(10):
+    resp = call(messages, use_search=True)
+    print(f"Turn {turn}: stop={resp.stop_reason} types={[b.type for b in resp.content]}")
+    
+    messages.append({"role": "assistant", "content": resp.content})
+    
+    # Collect any text blocks
+    for block in resp.content:
+        if hasattr(block, 'text') and block.text.strip():
+            text += block.text
+            print(f"  Got text block: {repr(block.text[:150])}")
+    
+    if resp.stop_reason == "end_turn":
+        break
+
+print(f"Total text collected: {len(text)} chars")
+print(f"First 300 chars: {repr(text[:300])}")
+
+if not text.strip():
+    raise ValueError("No text returned from API after all turns")
+
+# Extract JSON
+text = text.strip()
+start = text.find("{")
+end = text.rfind("}") + 1
+if start == -1 or end <= 1:
+    raise ValueError(f"No JSON object found. Got: {repr(text[:300])}")
+
+raw = text[start:end]
+print(f"Extracted JSON ({len(raw)} chars), parsing...")
 
 parsed = json.loads(raw)
+
 os.makedirs("data", exist_ok=True)
 with open("data/today.json", "w") as f:
     json.dump(parsed, f, indent=2)
 
-print(f"Done. Saved {len(parsed.get('top5', []))} fears.")
+print(f"SUCCESS. Saved {len(parsed.get('top5', []))} fears to data/today.json")
