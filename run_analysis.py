@@ -13,7 +13,7 @@ log("START: " + today)
 
 prompt = ("Today is " + today + ". Search today's news. Find 5 widely circulating CONTESTED fears "
           "where reasonable people genuinely disagree about the threat level. Also list 5 honorable mentions.\n\n"
-          "Respond ONLY with a JSON object. No markdown, no backticks, no explanation.\n\n"
+          "After searching, respond ONLY with a JSON object. No markdown, no backticks, no explanation.\n\n"
           '{"date":"' + today + '",'
           '"top5":[{"rank":1,"title":"4-6 word neutral title","reach":"One sentence.","the_fear":"One sentence.",'
           '"why_contested":"Two sentences.","case_for":"One sentence.","case_against":"One sentence.",'
@@ -21,8 +21,9 @@ prompt = ("Today is " + today + ". Search today's news. Find 5 widely circulatin
           '"honorable_mentions":[{"title":"Title","summary":"One sentence."}]}')
 
 messages = [{"role": "user", "content": prompt}]
+final_json = None
 
-for turn in range(10):
+for turn in range(15):
     for attempt in range(4):
         try:
             resp = client.messages.create(
@@ -42,44 +43,48 @@ for turn in range(10):
     messages.append({"role": "assistant", "content": resp.content})
 
     if resp.stop_reason == "end_turn":
-        # Find the text block
-        text = ""
+        # Find text block
         for block in resp.content:
             if block.type == "text" and block.text.strip():
-                text = block.text
-                log("Got text block: " + repr(text[:100]))
+                text = block.text.strip()
+                log("Text: " + repr(text[:120]))
+
+                # Strip markdown fences
+                if "```" in text:
+                    for part in text.split("```")[1:]:
+                        part = part.strip()
+                        if part.startswith("json"):
+                            part = part[4:].strip()
+                        if part.startswith("{"):
+                            text = part
+                            break
+
+                start = text.find("{")
+                end = text.rfind("}") + 1
+                if start != -1 and end > 1:
+                    try:
+                        final_json = json.loads(text[start:end])
+                        log("JSON parsed successfully!")
+                        break
+                    except json.JSONDecodeError as e:
+                        log("JSON parse failed: " + str(e))
+
+                # Not JSON yet — nudge the model to produce it
+                log("No JSON found, nudging model...")
+                messages.append({
+                    "role": "user",
+                    "content": "Good. Now respond with ONLY the JSON object based on what you found. No markdown, no backticks, start with { and end with }."
+                })
                 break
 
-        if not text:
-            raise ValueError("end_turn but no text block found")
+        if final_json:
+            break
 
-        # Strip markdown fences robustly
-        text = text.strip()
-        if "```" in text:
-            # Extract content between first ``` and last ```
-            parts = text.split("```")
-            # parts[1] will be "json\n{...}" or just "{...}"
-            for part in parts[1:]:
-                part = part.strip()
-                if part.startswith("json"):
-                    part = part[4:].strip()
-                if part.startswith("{"):
-                    text = part
-                    break
+if not final_json:
+    raise ValueError("Failed to get valid JSON after all turns")
 
-        # Find JSON boundaries
-        start = text.find("{")
-        end = text.rfind("}") + 1
-        if start == -1 or end <= 1:
-            raise ValueError("No JSON found in: " + repr(text[:200]))
+os.makedirs("data", exist_ok=True)
+with open("data/today.json", "w") as f:
+    json.dump(final_json, f, indent=2)
 
-        raw = text[start:end]
-        log("Parsing JSON (" + str(len(raw)) + " chars)...")
-
-        parsed = json.loads(raw)
-        os.makedirs("data", exist_ok=True)
-        with open("data/today.json", "w") as f:
-            json.dump(parsed, f, indent=2)
-
-        log("SUCCESS: Saved " + str(len(parsed.get("top5", []))) + " fears to data/today.json")
-        break
+log("SUCCESS: Saved " + str(len(final_json.get("top5", []))) + " fears")
