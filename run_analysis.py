@@ -175,25 +175,25 @@ html = f"""<!DOCTYPE html>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <p class="eyebrow">Fear Signal</p>
-    <h1>Today's Contested Fears</h1>
-    <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
-    <p class="meta-row">{date_str} · Updated daily via Claude AI + live news search</p>
-  </header>
+  <article>
+    <header>
+      <p class="eyebrow">Fear Signal</p>
+      <h1>Today's Contested Fears</h1>
+      <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
+      <p class="meta-row">{date_str} · Updated daily via Claude AI + live news search</p>
+    </header>
 
-  <div class="notice">
-    <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith. This analysis reflects AI judgment and can be wrong, especially on contested topics.
-  </div>
+    <div class="notice">
+      <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith. This analysis reflects AI judgment and can be wrong, especially on contested topics.
+    </div>
 
-  <p class="section-label">Top 5 contested fears today</p>
+    <p class="section-label">Top 5 contested fears today</p>
 
-  <main>
     {cards_html}
 
     <p class="section-label" style="margin-top:2.5rem">Also circulating today</p>
     {mentions_html}
-  </main>
+  </article>
 
   <footer>
     Fear Signal is an independent project exploring fear-based messaging in media.<br>
