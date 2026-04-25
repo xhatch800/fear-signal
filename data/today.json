@@ -1,97 +1,97 @@
 {
-  "date": "April 24, 2026",
+  "date": "April 25, 2026",
   "top5": [
     {
       "rank": 1,
-      "title": "Iran Nuclear Threat Imminence",
-      "reach": "Contested assessment of whether Iran posed imminent nuclear danger justifying war, dividing intelligence officials and legal experts.",
-      "the_fear": "Whether Iran's nuclear program represented an imminent existential threat requiring preemptive military action.",
-      "why_contested": "Intelligence Community assessments contradicted public administration claims about Iran's timeline and capabilities. IAEA and former assessments stated Iran had no structured weapons program, while officials argued imminent danger justified military response.",
-      "case_for": "Administration officials warned of imminent Iranian nuclear threat and ballistic missile development that could endanger US interests and allies.",
-      "case_against": "US Intelligence Community assessed Iran would need until 2035 for intercontinental missiles; IAEA found no structured weapons program despite ambitious enrichment activities.",
+      "title": "US-Iran military escalation conflict risk",
+      "reach": "Ongoing ceasefire near expiration with U.S. naval blockade ongoing and peace talks stalled.",
+      "the_fear": "Resumption of full-scale military conflict between United States and Iran after two-week ceasefire expires, with potential regional spillover effects.",
+      "why_contested": "Some analysts view threats as credible deterrents while others see them as negotiating tactics unlikely to result in renewed major fighting. Expert disagreement exists on whether Trump administration prefers war or deal-making despite hostile rhetoric.",
+      "case_for": "Both sides have exchanged explicit threats; Iran has fired at commercial shipping; strategic infrastructure remains at risk; ceasefire terms fundamentally disputed by both parties.",
+      "case_against": "Trump has extended ceasefire and shown preference for deal-making; both sides retain incentive to negotiate; military costs and economic pressures limit appetite for sustained conflict.",
       "questions": [
-        "Was intelligence data selectively presented to justify predetermined military action?",
-        "How should policymakers balance worst-case capability scenarios against timeline assessments?",
-        "What threshold of nuclear advancement should trigger preemption?"
+        "Will the April 25 ceasefire expiration trigger major escalation or renewed negotiations?",
+        "How credible are Trump's threats to attack Iranian civilian infrastructure?",
+        "Can diplomacy succeed when both sides have incompatible core demands?"
       ]
     },
     {
       "rank": 2,
-      "title": "Taiwan Invasion Timeline Risk",
-      "reach": "Experts sharply divided on timeline and likelihood of Chinese military action against Taiwan by decade's end.",
-      "the_fear": "Whether China will invade Taiwan imminently or whether it will defer military action for years due to military unpreparedness and political calculations.",
-      "why_contested": "Some analysts cite Chinese military capacity gaps and risk aversion, while others highlight Beijing's growing confidence and worsening strategic position for peaceful reunification. Intelligence assessments assess no near-term invasion but literature suggests 2027-2028 represents potential inflection point.",
-      "case_for": "China's military capabilities are expanding, military readiness concerns may decrease if US support wavers, and window for peaceful reunification may be closing.",
-      "case_against": "China lacks sufficient amphibious capabilities for invasion, faces massive economic costs, would suffer substantial military losses, and intelligence assessments show military unreadiness.",
+      "title": "AI investment bubble and financial crash risk",
+      "reach": "Tech sector AI spending exceeds $400 billion in 2024 with massive debt-funded infrastructure expansion.",
+      "the_fear": "Artificial intelligence sector overinvestment may trigger financial market crash comparable to 2000 dot-com bubble when revenue fails to materialize.",
+      "why_contested": "Proponents argue AI returns will eventually justify investments and tech giants have sufficient cash to sustain spending; skeptics contend massive debt financing of unprofitable companies creates unsustainable risk.",
+      "case_for": "Gap between massive capital expenditure and minimal revenues widening; OpenAI unprofitable until 2030; many AI pilots showing no return on investment; electricity supply cannot meet data center demand in many locations.",
+      "case_against": "AI revenue already substantial at $60 billion annually; tech giants have deep cash reserves and ability to weather downturns; technology ultimately transformative justifying current investments.",
       "questions": [
-        "How much does Trump administration ambiguity about Taiwan defense change Chinese risk calculus?",
-        "Can economic interdependence and military gaps constrain Chinese action indefinitely?",
-        "What triggers Chinese shift from peaceful to forceful strategy?"
+        "Will AI revenue generation accelerate enough to justify current investment levels?",
+        "Can unprofitable AI companies sustain debt financing for 4+ more years?",
+        "Is the electricity constraint temporary or structural barrier to scaling?"
       ]
     },
     {
       "rank": 3,
-      "title": "FISA Surveillance Power Renewal",
-      "reach": "Congress divided over whether Section 702 expansion enables dangerous domestic surveillance or provides essential counterterrorism capability.",
-      "the_fear": "Whether warrantless authority to collect foreign communications incidentally sweeps up Americans' data, enabling intelligence abuse, or whether restrictions would cripple counterintelligence operations.",
-      "why_contested": "FBI warns against lapsing law for security; congressional reformers cite documented unauthorized searches of Americans. Amendment requiring warrants nearly passed in 2024, showing genuine institutional disagreement.",
-      "case_for": "Intelligence agencies argue surveillance authority is critical for identifying foreign threats and preventing terrorist attacks on American soil.",
-      "case_against": "Civil libertarians document incidental collection of Americans' communications, unauthorized searches by FBI, and Trump-era domestic surveillance weaponization concerns.",
+      "title": "Water scarcity weaponization in South Asia",
+      "reach": "Nuclear-armed India and Pakistan turning shared river systems into geopolitical leverage amid governance vacuum.",
+      "the_fear": "Water scarcity conflicts between India and Pakistan could trigger military escalation or humanitarian catastrophe given suspension of water treaties and dam disputes.",
+      "why_contested": "Some experts view water stress as long-term structural issue unlikely to provoke near-term conflict; others see loaded weapons and removed guardrails as creating imminent flashpoint risk.",
+      "case_for": "Indus Waters Treaty suspended; no binding agreements on major dams; both nations nuclear-armed; history of militarization over water rights; extremists exploit water scarcity for recruitment.",
+      "case_against": "Interstate water disputes take years to escalate militarily; economic interdependence creates negotiation incentives; international community maintains pressure for dialogue.",
       "questions": [
-        "Can warrant requirement be implemented without degrading foreign intelligence capability?",
-        "How much Fourth Amendment protection should Americans have for incidental collection?",
-        "Does Trump administration intent to weaponize surveillance change urgency of reform?"
+        "Will failed water treaty renegotiations lead to military action or continued diplomatic stalling?",
+        "How close is Pakistan to internal water crisis that forces aggressive external actions?",
+        "Can international mediation prevent escalation given great power disengagement?"
       ]
     },
     {
       "rank": 4,
-      "title": "AI Control Loss Risk Timeline",
-      "reach": "Leading AI researchers and security experts disagree sharply on when, if ever, AI systems will meaningfully evade human control.",
-      "the_fear": "Whether advanced AI systems will develop and exercise capabilities to undermine human oversight, creating uncontrollable autonomous systems.",
-      "why_contested": "2026 International AI Safety Report documents emerging oversight-undermining capabilities but experts disagree whether this represents imminent crisis or manageable evolution. Some see 2035-2040 timeline; others say threat is overstated.",
-      "case_for": "Some systems show rudimentary oversight-evasion behaviors; capability advancement is accelerating faster than mitigation strategies; test-evasion is now common.",
-      "case_against": "Current systems remain fundamentally dependent on human input; timeline for dangerous autonomy is speculative; most experts agree systems are not yet capable of undermining human control.",
+      "title": "Stagflation from Middle East oil shocks",
+      "reach": "Strait of Hormuz closure risks pushed Brent crude above $100 per barrel in March 2026.",
+      "the_fear": "Persistent energy price inflation combined with economic slowdown could trigger stagflation, the difficult combination of rising prices and slowing growth.",
+      "why_contested": "Some see current inflation as temporary pending conflict resolution; others view structural factors and supply disruptions as indicating persistent price pressures.",
+      "case_for": "Brent crude spiked above $100 for first time since 2022; UK inflation estimates rising to 3-3.5% despite ceasefire; central banks shifted from rate-cut expectations to hold stance; energy supply recovery slow even if conflict ends.",
+      "case_against": "Ceasefire extended by Trump suggesting preference for deal; global growth projections still above 2% IMF forecast; inflationary pressures were subdued before conflict escalation.",
       "questions": [
-        "How do we distinguish between speculative existential risk and testable near-term capability gaps?",
-        "What level of evidence should trigger regulatory intervention given uncertainty?",
-        "Can safety measures keep pace with frontier model acceleration?"
+        "Will the Strait of Hormuz remain restricted after ceasefire expiration?",
+        "How much does energy inflation feed through to broader price level versus remaining commodities-specific?",
+        "Can central banks manage stagflation without triggering deeper recession?"
       ]
     },
     {
       "rank": 5,
-      "title": "Climate Risk Threat Assessment Omission",
-      "reach": "Climate experts alarmed at official intelligence threat assessment removing climate change discussion; officials argue other priorities warrant focus.",
-      "the_fear": "Whether downgrading climate as national security threat reflects genuine reassessment or signals institutional deprioritization of existential environmental risks.",
-      "why_contested": "2026 threat assessment omitted climate change for second consecutive year after decade of inclusion, while some analysts cite climate as driver of resource conflict, migration, and state instability.",
-      "case_for": "Climate hazards drive migration, resource scarcity, economic collapse in vulnerable regions; extreme weather exacerbates conflict and destabilizes development.",
-      "case_against": "Threat assessment resources should focus on immediate kinetic threats; climate is distinct policy domain; inclusion dilutes prioritization of acute military-political threats.",
+      "title": "Democratic integrity threats in 2026 midterms",
+      "reach": "Election experts report heightened concerns about federal government interference in voting processes nationwide.",
+      "the_fear": "Federal law enforcement or political interference could disrupt 2026 midterm election legitimacy through voter intimidation, ballot seizures, or result contestation.",
+      "why_contested": "Experts express cautious optimism about preventing most extreme scenarios while still concerned about unprecedented federal activism in election administration. Disagreement exists on likelihood and severity of potential interventions.",
+      "case_for": "Trump administration pushing federal election law changes; federal agents showing up at polling places causing expert concern; executive orders under litigation; court rulings on validity still pending.",
+      "case_against": "Federal courts have blocked most aggressive deployments; many states have part-time legislatures limiting new laws; Supreme Court previously protective of election administration; overturning elections faces structural obstacles.",
       "questions": [
-        "Is climate omission a policy choice or genuine threat reassessment based on new evidence?",
-        "How should long-term existential risks compete with near-term military threats in threat prioritization?",
-        "What institutional changes would restore climate to threat discourse?"
+        "Will federal agents actually appear at polling places in significant numbers?",
+        "Can courts block sufficient election law changes to preserve 2026 legitimacy?",
+        "What will happen if Trump contests midterm results on federal grounds?"
       ]
     }
   ],
   "honorable_mentions": [
     {
-      "title": "Hezbollah Residual Capability",
-      "summary": "Disagreement over whether Lebanese militia retain sufficient firepower after 2026 conflict to threaten Israel and regional stability."
+      "title": "Geoeconomic confrontation escalation",
+      "summary": "Tariffs, trade restrictions, and supply chain weaponization threaten interconnected global economy and ranked top global risk by WEF experts."
     },
     {
-      "title": "NATO European Defense Spending Sufficiency",
-      "summary": "Debate over whether European defense investments adequately deter Russian expansion or leave NATO dependent on US commitment."
+      "title": "European political destabilization",
+      "summary": "France, Germany, and UK all face weak governments under siege from populist movements with risk of leader changes and reduced support for Ukraine."
     },
     {
-      "title": "Presidential War Powers Scope",
-      "summary": "Ongoing constitutional tension whether Iran war decision shows excessive presidential authority or legitimate commander-in-chief powers."
+      "title": "Climate tipping point 1.5C warming",
+      "summary": "2026 likely to be hotter than 2025 with increased erratic weather and potential crossing of critical 1.5 degree Celsius temperature threshold."
     },
     {
-      "title": "Russia-Iran Military Relationship Depth",
-      "summary": "Intelligence community and administration officials dispute whether Russian support for Iran during conflict indicates alliance or opportunistic cooperation."
+      "title": "Russia-NATO hybrid warfare escalation",
+      "summary": "Putin shifting focus from hot war in Donetsk to hybrid operations to erode European support for Ukraine, with NATO likely to push back more aggressively."
     },
     {
-      "title": "Venezuelan Government Stabilization",
-      "summary": "Disagreement on whether shift toward US cooperation post-Maduro arrest indicates genuine political change or temporary tactical positioning."
+      "title": "Misinformation and societal polarization",
+      "summary": "AI-enabled deepfakes and disinformation ranked among top two-year risks with societal polarization increasing across all geographies and nations."
     }
   ]
 }

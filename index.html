@@ -3,310 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Fear Signal" />
-  <title>Fear Signal — Daily Contested Fear Analysis</title>
+  <title>Fear Signal — April 25, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #fafaf8;
-      --surface: #ffffff;
-      --surface2: #f4f3ef;
-      --border: rgba(0,0,0,0.1);
-      --border2: rgba(0,0,0,0.18);
-      --text: #1a1a18;
-      --text2: #555550;
-      --text3: #999990;
-      --accent: #3a3a35;
+      --bg: #fafaf8; --surface: #ffffff; --surface2: #f4f3ef;
+      --border: rgba(0,0,0,0.1); --border2: rgba(0,0,0,0.18);
+      --text: #1a1a18; --text2: #555550; --text3: #999990;
     }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    .wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-
-    /* Masthead */
-    .masthead {
-      border-bottom: 0.5px solid var(--border2);
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 8px;
-    }
-    .site-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 10px;
-    }
-    .site-tagline {
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.65;
-      max-width: 560px;
-      margin-bottom: 14px;
-    }
-    .meta-row {
-      font-size: 12px;
-      color: var(--text3);
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .meta-sep { opacity: 0.4; }
-
-    /* Notice */
-    .notice {
-      background: var(--surface2);
-      border-left: 2px solid var(--border2);
-      border-radius: 0 6px 6px 0;
-      padding: 10px 16px;
-      font-size: 12px;
-      color: var(--text2);
-      line-height: 1.6;
-      margin-bottom: 2.5rem;
-    }
-
-    /* Section label */
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 1rem;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--surface);
-      border: 0.5px solid var(--border2);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .rank {
-      font-size: 11px;
-      color: var(--text3);
-      margin-bottom: 6px;
-    }
-    .fear-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 1.25rem;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    header { border-bottom: 0.5px solid var(--border2); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+    .eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600; line-height: 1.15; margin-bottom: 10px; }
+    .site-tagline { font-size: 14px; color: var(--text2); line-height: 1.65; max-width: 560px; margin-bottom: 14px; }
+    .meta-row { font-size: 12px; color: var(--text3); }
+    .notice { background: var(--surface2); border-left: 2px solid var(--border2); border-radius: 0 6px 6px 0; padding: 10px 16px; font-size: 12px; color: var(--text2); line-height: 1.6; margin-bottom: 2.5rem; }
+    .section-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 1rem; }
+    .card { background: var(--surface); border: 0.5px solid var(--border2); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }
+    .rank { font-size: 11px; color: var(--text3); margin-bottom: 6px; }
+    .card h2 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; line-height: 1.3; margin-bottom: 1.25rem; }
     .row { margin-bottom: 1rem; }
-    .row-label {
-      font-size: 11px;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 5px;
-    }
-    .row-body {
-      font-size: 13.5px;
-      color: var(--text2);
-      line-height: 1.7;
-    }
-    .sides {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 5px;
-    }
+    .row h3 { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); margin-bottom: 5px; font-weight: 400; }
+    .row p, .row li { font-size: 13.5px; color: var(--text2); line-height: 1.7; }
+    .sides { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
     @media (max-width: 540px) { .sides { grid-template-columns: 1fr; } }
-    .side {
-      background: var(--surface2);
-      border-radius: 8px;
-      padding: 12px 14px;
-    }
-    .side-label {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text3);
-      margin-bottom: 6px;
-    }
-    .side-body {
-      font-size: 12.5px;
-      color: var(--text2);
-      line-height: 1.65;
-    }
-    .qs { list-style: none; margin-top: 5px; }
-    .qs li {
-      font-size: 13.5px;
-      color: var(--text2);
-      padding: 6px 0;
-      border-top: 0.5px solid var(--border);
-      line-height: 1.55;
-    }
-    .qs li::before { content: "→ "; color: var(--text3); }
-
-    /* Honorable mentions */
-    .honorable {
-      background: var(--surface2);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 0;
-    }
-    .hon-item {
-      font-size: 13.5px;
-      color: var(--text2);
-      padding: 8px 0;
-      border-top: 0.5px solid var(--border);
-      line-height: 1.55;
-    }
-    .hon-item:first-child { border-top: none; padding-top: 0; }
-    .hon-name { font-weight: 500; color: var(--text); }
-
-    /* Loading / error */
-    .loading {
-      text-align: center;
-      padding: 4rem 0;
-      color: var(--text3);
-      font-size: 14px;
-    }
-    .error {
-      text-align: center;
-      padding: 3rem;
-      color: var(--text2);
-      font-size: 13px;
-      border: 0.5px solid var(--border2);
-      border-radius: 12px;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
-      border-top: 0.5px solid var(--border);
-      font-size: 12px;
-      color: var(--text3);
-      line-height: 1.7;
-    }
+    .side { background: var(--surface2); border-radius: 8px; padding: 12px 14px; }
+    .side h4 { font-size: 11px; font-weight: 500; color: var(--text3); margin-bottom: 6px; }
+    .side p { font-size: 12.5px; color: var(--text2); line-height: 1.65; }
+    .row ul { list-style: none; margin-top: 5px; padding: 0; }
+    .row ul li { font-size: 13.5px; color: var(--text2); padding: 6px 0; border-top: 0.5px solid var(--border); line-height: 1.55; }
+    .row ul li::before { content: "\2192  "; color: var(--text3); }
+    .honorable { list-style: none; background: var(--surface2); border-radius: 12px; padding: 1.25rem 1.5rem; }
+    .honorable li { font-size: 13.5px; color: var(--text2); padding: 8px 0; border-top: 0.5px solid var(--border); line-height: 1.55; }
+    .honorable li:first-child { border-top: none; padding-top: 0; }
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text3); line-height: 1.7; }
   </style>
 </head>
 <body>
 <div class="wrap">
-
-  <div class="masthead">
+  <header>
     <p class="eyebrow">Fear Signal</p>
-    <h1 class="site-title">Today's Contested Fears</h1>
+    <h1>Today's Contested Fears</h1>
     <p class="site-tagline">Each day, the 5 most widely circulating contested fears in the media — presented without verdict. Not to tell you what to think, but to help you pause before you do.</p>
-    <div class="meta-row">
-      <span id="display-date">Loading...</span>
-      <span class="meta-sep">·</span>
-      <span>Updated daily via Claude AI + live news search</span>
-    </div>
-  </div>
+    <p class="meta-row">April 25, 2026 · Updated daily via Claude AI + live news search</p>
+  </header>
 
   <div class="notice">
     <strong>Epistemic notice:</strong> These are fears where reasonable, informed people genuinely disagree. The goal is not resolution — it is reflection. Both sides are presented in good faith. This analysis reflects AI judgment and can be wrong, especially on contested topics.
   </div>
 
-  <article>
   <p class="section-label">Top 5 contested fears today</p>
-  <div id="cards-area"><div class="loading">Loading today's analysis...</div></div>
 
-  <div id="honorable-area"></div>
-  </article>
+  <main>
+    
+        <article class="card">
+          <p class="rank">#1 most pervasive today</p>
+          <h2>US-Iran military escalation conflict risk</h2>
+          <section class="row">
+            <h3>Reach</h3>
+            <p>Ongoing ceasefire near expiration with U.S. naval blockade ongoing and peace talks stalled.</p>
+          </section>
+          <section class="row">
+            <h3>The fear</h3>
+            <p>Resumption of full-scale military conflict between United States and Iran after two-week ceasefire expires, with potential regional spillover effects.</p>
+          </section>
+          <section class="row">
+            <h3>Why it's contested</h3>
+            <p>Some analysts view threats as credible deterrents while others see them as negotiating tactics unlikely to result in renewed major fighting. Expert disagreement exists on whether Trump administration prefers war or deal-making despite hostile rhetoric.</p>
+          </section>
+          <section class="row">
+            <h3>The strongest cases</h3>
+            <div class="sides">
+              <div class="side">
+                <h4>Why some find it legitimate</h4>
+                <p>Both sides have exchanged explicit threats; Iran has fired at commercial shipping; strategic infrastructure remains at risk; ceasefire terms fundamentally disputed by both parties.</p>
+              </div>
+              <div class="side">
+                <h4>Why others find it exaggerated</h4>
+                <p>Trump has extended ceasefire and shown preference for deal-making; both sides retain incentive to negotiate; military costs and economic pressures limit appetite for sustained conflict.</p>
+              </div>
+            </div>
+          </section>
+          <section class="row">
+            <h3>Questions worth sitting with</h3>
+            <ul><li>Will the April 25 ceasefire expiration trigger major escalation or renewed negotiations?</li><li>How credible are Trump's threats to attack Iranian civilian infrastructure?</li><li>Can diplomacy succeed when both sides have incompatible core demands?</li></ul>
+          </section>
+        </article>
+        <article class="card">
+          <p class="rank">#2 most pervasive today</p>
+          <h2>AI investment bubble and financial crash risk</h2>
+          <section class="row">
+            <h3>Reach</h3>
+            <p>Tech sector AI spending exceeds $400 billion in 2024 with massive debt-funded infrastructure expansion.</p>
+          </section>
+          <section class="row">
+            <h3>The fear</h3>
+            <p>Artificial intelligence sector overinvestment may trigger financial market crash comparable to 2000 dot-com bubble when revenue fails to materialize.</p>
+          </section>
+          <section class="row">
+            <h3>Why it's contested</h3>
+            <p>Proponents argue AI returns will eventually justify investments and tech giants have sufficient cash to sustain spending; skeptics contend massive debt financing of unprofitable companies creates unsustainable risk.</p>
+          </section>
+          <section class="row">
+            <h3>The strongest cases</h3>
+            <div class="sides">
+              <div class="side">
+                <h4>Why some find it legitimate</h4>
+                <p>Gap between massive capital expenditure and minimal revenues widening; OpenAI unprofitable until 2030; many AI pilots showing no return on investment; electricity supply cannot meet data center demand in many locations.</p>
+              </div>
+              <div class="side">
+                <h4>Why others find it exaggerated</h4>
+                <p>AI revenue already substantial at $60 billion annually; tech giants have deep cash reserves and ability to weather downturns; technology ultimately transformative justifying current investments.</p>
+              </div>
+            </div>
+          </section>
+          <section class="row">
+            <h3>Questions worth sitting with</h3>
+            <ul><li>Will AI revenue generation accelerate enough to justify current investment levels?</li><li>Can unprofitable AI companies sustain debt financing for 4+ more years?</li><li>Is the electricity constraint temporary or structural barrier to scaling?</li></ul>
+          </section>
+        </article>
+        <article class="card">
+          <p class="rank">#3 most pervasive today</p>
+          <h2>Water scarcity weaponization in South Asia</h2>
+          <section class="row">
+            <h3>Reach</h3>
+            <p>Nuclear-armed India and Pakistan turning shared river systems into geopolitical leverage amid governance vacuum.</p>
+          </section>
+          <section class="row">
+            <h3>The fear</h3>
+            <p>Water scarcity conflicts between India and Pakistan could trigger military escalation or humanitarian catastrophe given suspension of water treaties and dam disputes.</p>
+          </section>
+          <section class="row">
+            <h3>Why it's contested</h3>
+            <p>Some experts view water stress as long-term structural issue unlikely to provoke near-term conflict; others see loaded weapons and removed guardrails as creating imminent flashpoint risk.</p>
+          </section>
+          <section class="row">
+            <h3>The strongest cases</h3>
+            <div class="sides">
+              <div class="side">
+                <h4>Why some find it legitimate</h4>
+                <p>Indus Waters Treaty suspended; no binding agreements on major dams; both nations nuclear-armed; history of militarization over water rights; extremists exploit water scarcity for recruitment.</p>
+              </div>
+              <div class="side">
+                <h4>Why others find it exaggerated</h4>
+                <p>Interstate water disputes take years to escalate militarily; economic interdependence creates negotiation incentives; international community maintains pressure for dialogue.</p>
+              </div>
+            </div>
+          </section>
+          <section class="row">
+            <h3>Questions worth sitting with</h3>
+            <ul><li>Will failed water treaty renegotiations lead to military action or continued diplomatic stalling?</li><li>How close is Pakistan to internal water crisis that forces aggressive external actions?</li><li>Can international mediation prevent escalation given great power disengagement?</li></ul>
+          </section>
+        </article>
+        <article class="card">
+          <p class="rank">#4 most pervasive today</p>
+          <h2>Stagflation from Middle East oil shocks</h2>
+          <section class="row">
+            <h3>Reach</h3>
+            <p>Strait of Hormuz closure risks pushed Brent crude above $100 per barrel in March 2026.</p>
+          </section>
+          <section class="row">
+            <h3>The fear</h3>
+            <p>Persistent energy price inflation combined with economic slowdown could trigger stagflation, the difficult combination of rising prices and slowing growth.</p>
+          </section>
+          <section class="row">
+            <h3>Why it's contested</h3>
+            <p>Some see current inflation as temporary pending conflict resolution; others view structural factors and supply disruptions as indicating persistent price pressures.</p>
+          </section>
+          <section class="row">
+            <h3>The strongest cases</h3>
+            <div class="sides">
+              <div class="side">
+                <h4>Why some find it legitimate</h4>
+                <p>Brent crude spiked above $100 for first time since 2022; UK inflation estimates rising to 3-3.5% despite ceasefire; central banks shifted from rate-cut expectations to hold stance; energy supply recovery slow even if conflict ends.</p>
+              </div>
+              <div class="side">
+                <h4>Why others find it exaggerated</h4>
+                <p>Ceasefire extended by Trump suggesting preference for deal; global growth projections still above 2% IMF forecast; inflationary pressures were subdued before conflict escalation.</p>
+              </div>
+            </div>
+          </section>
+          <section class="row">
+            <h3>Questions worth sitting with</h3>
+            <ul><li>Will the Strait of Hormuz remain restricted after ceasefire expiration?</li><li>How much does energy inflation feed through to broader price level versus remaining commodities-specific?</li><li>Can central banks manage stagflation without triggering deeper recession?</li></ul>
+          </section>
+        </article>
+        <article class="card">
+          <p class="rank">#5 most pervasive today</p>
+          <h2>Democratic integrity threats in 2026 midterms</h2>
+          <section class="row">
+            <h3>Reach</h3>
+            <p>Election experts report heightened concerns about federal government interference in voting processes nationwide.</p>
+          </section>
+          <section class="row">
+            <h3>The fear</h3>
+            <p>Federal law enforcement or political interference could disrupt 2026 midterm election legitimacy through voter intimidation, ballot seizures, or result contestation.</p>
+          </section>
+          <section class="row">
+            <h3>Why it's contested</h3>
+            <p>Experts express cautious optimism about preventing most extreme scenarios while still concerned about unprecedented federal activism in election administration. Disagreement exists on likelihood and severity of potential interventions.</p>
+          </section>
+          <section class="row">
+            <h3>The strongest cases</h3>
+            <div class="sides">
+              <div class="side">
+                <h4>Why some find it legitimate</h4>
+                <p>Trump administration pushing federal election law changes; federal agents showing up at polling places causing expert concern; executive orders under litigation; court rulings on validity still pending.</p>
+              </div>
+              <div class="side">
+                <h4>Why others find it exaggerated</h4>
+                <p>Federal courts have blocked most aggressive deployments; many states have part-time legislatures limiting new laws; Supreme Court previously protective of election administration; overturning elections faces structural obstacles.</p>
+              </div>
+            </div>
+          </section>
+          <section class="row">
+            <h3>Questions worth sitting with</h3>
+            <ul><li>Will federal agents actually appear at polling places in significant numbers?</li><li>Can courts block sufficient election law changes to preserve 2026 legitimacy?</li><li>What will happen if Trump contests midterm results on federal grounds?</li></ul>
+          </section>
+        </article>
+
+    <p class="section-label" style="margin-top:2.5rem">Also circulating today</p>
+    <ul class='honorable'><li><strong>Geoeconomic confrontation escalation</strong> — Tariffs, trade restrictions, and supply chain weaponization threaten interconnected global economy and ranked top global risk by WEF experts.</li><li><strong>European political destabilization</strong> — France, Germany, and UK all face weak governments under siege from populist movements with risk of leader changes and reduced support for Ukraine.</li><li><strong>Climate tipping point 1.5C warming</strong> — 2026 likely to be hotter than 2025 with increased erratic weather and potential crossing of critical 1.5 degree Celsius temperature threshold.</li><li><strong>Russia-NATO hybrid warfare escalation</strong> — Putin shifting focus from hot war in Donetsk to hybrid operations to erode European support for Ukraine, with NATO likely to push back more aggressively.</li><li><strong>Misinformation and societal polarization</strong> — AI-enabled deepfakes and disinformation ranked among top two-year risks with societal polarization increasing across all geographies and nations.</li></ul>
+  </main>
 
   <footer>
     Fear Signal is an independent project exploring fear-based messaging in media.<br>
     Analysis is generated once daily by Claude AI (Anthropic) using live news search.<br>
     It reflects AI judgment — treat it as a starting point, not a verdict.
   </footer>
-
 </div>
-
-<script>
-  function esc(s) {
-    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-
-  async function load() {
-    try {
-      const res = await fetch('data/today.json');
-      if (!res.ok) throw new Error('No data file found');
-      const data = await res.json();
-
-      document.getElementById('display-date').textContent = data.date || 'Today';
-
-      const cards = (data.top5 || []).map(item => `
-        <div class="card">
-          <div class="rank">#${item.rank} most pervasive today</div>
-          <h2 class="fear-title">${esc(item.title)}</h2>
-          <div class="row">
-            <div class="row-label">📊 Reach</div>
-            <div class="row-body">${esc(item.reach)}</div>
-          </div>
-          <div class="row">
-            <div class="row-label">🚩 The fear</div>
-            <div class="row-body">${esc(item.the_fear)}</div>
-          </div>
-          <div class="row">
-            <div class="row-label">🔍 Why it's contested</div>
-            <div class="row-body">${esc(item.why_contested)}</div>
-          </div>
-          <div class="row">
-            <div class="row-label">⚖️ The strongest cases</div>
-            <div class="sides">
-              <div class="side">
-                <div class="side-label">Why some find it legitimate</div>
-                <div class="side-body">${esc(item.case_for)}</div>
-              </div>
-              <div class="side">
-                <div class="side-label">Why others find it exaggerated</div>
-                <div class="side-body">${esc(item.case_against)}</div>
-              </div>
-            </div>
-          </div>
-          <div class="row" style="margin-bottom:0">
-            <div class="row-label">🪞 Questions worth sitting with</div>
-            <ul class="qs">${(item.questions || []).map(q => `<li>${esc(q)}</li>`).join('')}</ul>
-          </div>
-        </div>
-      `).join('');
-
-      document.getElementById('cards-area').innerHTML = cards;
-
-      const mentions = data.honorable_mentions || [];
-      if (mentions.length) {
-        document.getElementById('honorable-area').innerHTML = `
-          <p class="section-label" style="margin-top:2.5rem">Also circulating today</p>
-          <div class="honorable">
-            ${mentions.map(m => `<div class="hon-item"><span class="hon-name">${esc(m.title)}</span> — ${esc(m.summary)}</div>`).join('')}
-          </div>`;
-      }
-
-    } catch(e) {
-      document.getElementById('cards-area').innerHTML = `
-        <div class="error">
-          Today's analysis is not yet available.<br>
-          Check back after 8am — the daily update runs automatically each morning.<br><br>
-          <small>${esc(e.message)}</small>
-        </div>`;
-    }
-  }
-
-  load();
-</script>
 </body>
 </html>
