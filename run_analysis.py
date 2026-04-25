@@ -87,7 +87,7 @@ def render_cards(top5):
     for item in top5:
         qs = "".join(f"<li>{esc(q)}</li>" for q in item.get("questions", []))
         html += f"""
-        <article class="card">
+        <section class="card">
           <h2><span class="rank">#{item['rank']}</span> {esc(item['title'])}</h2>
           <section class="row">
             <h3>Reach</h3>
@@ -118,7 +118,7 @@ def render_cards(top5):
             <h3>Questions worth sitting with</h3>
             <ul>{qs}</ul>
           </section>
-        </article>"""
+        </section>"""
     return html
 
 def render_mentions(mentions):
