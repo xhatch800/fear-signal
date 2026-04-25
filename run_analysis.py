@@ -88,8 +88,7 @@ def render_cards(top5):
         qs = "".join(f"<li>{esc(q)}</li>" for q in item.get("questions", []))
         html += f"""
         <article class="card">
-          <p class="rank">#{item['rank']} most pervasive today</p>
-          <h2>{esc(item['title'])}</h2>
+          <h2><span class="rank">#{item['rank']}</span> {esc(item['title'])}</h2>
           <section class="row">
             <h3>Reach</h3>
             <p>{esc(item['reach'])}</p>
@@ -155,8 +154,8 @@ html = f"""<!DOCTYPE html>
     .notice {{ background: var(--surface2); border-left: 2px solid var(--border2); border-radius: 0 6px 6px 0; padding: 10px 16px; font-size: 12px; color: var(--text2); line-height: 1.6; margin-bottom: 2.5rem; }}
     .section-label {{ font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 1rem; }}
     .card {{ background: var(--surface); border: 0.5px solid var(--border2); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }}
-    .rank {{ font-size: 11px; color: var(--text3); margin-bottom: 6px; }}
     .card h2 {{ font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; line-height: 1.3; margin-bottom: 1.25rem; }}
+    .rank {{ color: var(--text3); font-weight: 400; margin-right: 4px; }}
     .row {{ margin-bottom: 1rem; }}
     .row h3 {{ font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); margin-bottom: 5px; font-weight: 400; }}
     .row p, .row li {{ font-size: 13.5px; color: var(--text2); line-height: 1.7; }}
