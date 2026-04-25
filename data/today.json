@@ -3,95 +3,95 @@
   "top5": [
     {
       "rank": 1,
-      "title": "Iran Conflict Escalation Risk",
-      "reach": "Dominant global news for weeks; ceasefire fragile with disagreement over terms.",
-      "the_fear": "War could resume, causing major energy disruption and global economic crisis via Strait of Hormuz closure.",
-      "why_contested": "Some officials and analysts believe military pressure is necessary deterrence; others argue blockade tactics escalate risks and that diplomacy remains viable. Deep disagreement exists on whether renewed strikes or continued negotiations best serve peace.",
-      "case_for": "USS blockade, damaged Iranian capabilities, and demonstrated US resolve create leverage for genuine negotiations.",
-      "case_against": "Military escalation derailed diplomacy, ceasefire violations by both sides continue, and Iran may have outlasted US patience.",
+      "title": "AI Risk and Catastrophic Safety",
+      "reach": "Multiple international expert panels including governments from US to China released warnings in April 2026 about advanced AI capabilities posing existential risks.",
+      "the_fear": "AI systems may develop dangerous capabilities faster than control mechanisms can be implemented, potentially including autonomous bioweapon design and uncontrollable self-modification.",
+      "why_contested": "Some experts view catastrophic AI risks as speculative and lacking scientific plausibility, arguing the technology remains fundamentally manageable and subject to oversight. Others contend imminent dangers are being downplayed by profit-driven industry and inadequate governance frameworks make risks uncontrollable.",
+      "case_for": "Experts including Geoffrey Hinton and Yoshua Bengio warn that current AI models demonstrate concerning behaviors like toxin generation, with dual-use capabilities proliferating faster than safety research can address them.",
+      "case_against": "Critics argue alleged existential threats rest on unproven assumptions about artificial superintelligence with no clear development pathway, and that regulatory focus should target concrete harms rather than hypothetical scenarios.",
       "questions": [
-        "Can ceasefire be extended beyond current deadlines?",
-        "Would reopening Strait of Hormuz require Iranian security role or international neutrality?",
-        "Is military conflict better or worse outcome than extended sanctions stalemate?"
+        "Does the regulatory slowdown risk stifling beneficial innovation or is aggressive oversight necessary?",
+        "Can governance frameworks adapt quickly enough to emerging capabilities across fragmented jurisdictions?",
+        "Are industry-led safety initiatives sufficient or do independent researchers need stronger mandates?"
       ]
     },
     {
       "rank": 2,
-      "title": "AI Safety versus Capability Race",
-      "reach": "Widespread among tech leaders, policymakers, and security experts; rapidly intensifying debate.",
-      "the_fear": "Advanced AI systems could pose existential risks or enable large-scale cyberattacks before adequate safeguards exist.",
-      "why_contested": "Leading experts warn of grave risks while tech industry argues benefits require rapid deployment; US policy favors light-touch regulation while EU and others pursue stricter frameworks. Disagreement centers on whether risks are speculative or imminent.",
-      "case_for": "International AI Safety Report 2026 documents concerning capabilities; industry models attempted self-harm avoidance and sabotage in safety tests.",
-      "case_against": "Current safeguards improving; no catastrophic incident has occurred; competitive pressure from China makes US caution economically risky.",
+      "title": "Pandemic Preparedness vs Cost Control",
+      "reach": "Global health organizations reported in 2026 that funding for pandemic prevention has been cut sharply while experts debate whether investments are justified.",
+      "the_fear": "Disease X could emerge as a pandemic worse than COVID-19, finding weakened surveillance systems and reduced international coordination following budget cuts and aid withdrawals.",
+      "why_contested": "One perspective emphasizes that pandemics are low-probability but catastrophic events requiring sustained preparation regardless of costs, given COVID's 2-year life expectancy loss. Others argue resources should prioritize known immediate threats like measles and HIV resurgence rather than speculative future pathogens.",
+      "case_for": "WHO estimates 50% probability of another COVID-magnitude pandemic in next 25 years; COVID killed 7+ million; current systems are demonstrably less prepared than post-2020 as funding collapsed.",
+      "case_against": "Spending limited resources on hypothetical threats diverts funding from proven interventions addressing existing disease burdens; population health basics matter more than pandemic bureaucracy.",
       "questions": [
-        "Should frontier AI capabilities be legally restricted, left to industry, or governed internationally?",
-        "How certain must existential risk be before restricting beneficial innovation?",
-        "Can different regulatory approaches like US light-touch versus EU strict coexist?"
+        "How much preparedness investment is cost-effective given actual pandemic probability and predicted severity?",
+        "Should surveillance focus on known threats or maintain expensive readiness for unknown Disease X?",
+        "Can global coordination on pandemic response survive geopolitical fragmentation?"
       ]
     },
     {
       "rank": 3,
-      "title": "Immigration Policy Economic Impact",
-      "reach": "Divided politically; major economic debate between business, labor, and policy makers.",
-      "the_fear": "Restrictive enforcement either harms economy via labor shortages or helps by protecting wages; depends on one's economic model.",
-      "why_contested": "Economists genuinely disagree on wage effects for low-skilled workers and net fiscal impact; Trump policies caused sharp 2025-2026 net negative migration, creating new uncertainty. Both sides cite legitimate research supporting opposite conclusions.",
-      "case_for": "Strict enforcement protects low-skill workers from wage pressure; reduces strain on local public services; addresses sovereignty concerns.",
-      "case_against": "Negative net migration threatens GDP, Social Security solvency, and labor shortages in critical sectors; immigrants contributed 1.7 trillion to economy.",
+      "title": "Ukraine War Resolution vs Security Risk",
+      "reach": "Peace negotiations between US and Ukraine continued April 2026 with sharp disagreement over whether ceasefire would strengthen or dangerously weaken Ukrainian position.",
+      "the_fear": "A ceasefire allowing Russian military regrouping could lead to renewed Russian aggression within years, while continued war causes catastrophic daily civilian losses and economic devastation.",
+      "why_contested": "Supporters of rapid peace prioritize ending current suffering and avoiding NATO escalation; they argue frozen conflicts often persist. Those opposing compromise believe Russia views any pause as temporary victory, citing 86.7% of Ukrainians fearing Russian restart.",
+      "case_for": "Protracted war destroys Ukraine's economic capacity for recovery, risks NATO-Russia direct conflict, and diplomatic resolution before further casualties is both humanitarian and realistic.",
+      "case_against": "Russia's historical pattern shows ceasefire violations; Putin's maximalist demands suggest compromise would mean Ukraine surrenders sovereignty; negotiated settlement now invites larger 2028 war.",
       "questions": [
-        "Will labor shortages in agriculture, construction, hospitality become acute by 2027?",
-        "Do low-skilled native workers face real wage compression from immigration?",
-        "Can enforcement-only approach sustain economically versus needing legal pathways?"
+        "Can legally binding security guarantees realistically deter Russian aggression or would they merely delay conflict?",
+        "Is a 'bad peace' worse than continued attrition, or does continued resistance weaken Russia sufficiently for better terms?",
+        "What role should US commitment to NATO Europe play in Ukraine strategy\u2014constraint or guarantee?"
       ]
     },
     {
       "rank": 4,
-      "title": "Inflation and Recession Risk",
-      "reach": "Central to consumer sentiment and market forecasts; economists sharply split on scenarios.",
-      "the_fear": "Either stagflation from Iran war supply shocks, or recession from AI bubble deflation; disagreement on which is greater threat.",
-      "why_contested": "IMF, JP Morgan, and other forecasters publish wide-ranging scenarios; Iran war shifted inflation expectations upward but not recession certainty. Some see energy crisis as temporary; others see structural inflation returning.",
-      "case_for": "Energy prices above 100 per barrel, disrupted shipping, tariff effects, and fiscal stimulus could create persistent 3-4 percent inflation.",
-      "case_against": "Flexible labor markets, better inflation expectations, and easing monetary policy can manage shock; recession probability only 30-35 percent by most models.",
+      "title": "Climate Action Cost vs Inaction Risk",
+      "reach": "Debate over carbon taxes, energy transition speed and job disruption dominated 2026 policy as energy shocks from Iran conflict raised urgency.",
+      "the_fear": "Delay in emissions cuts locks in 30%+ agricultural yield decline by 2050 and $38 trillion annual climate damages; transition costs are lower but harm fossil fuel workers immediately.",
+      "why_contested": "Economists debate whether clean energy transition saves money overall\u2014IPCC models show win-win opportunities while other economic models show all mitigation has net costs; public skepticism remains high on cost impacts.",
+      "case_for": "Evidence shows renewable energy now cheaper than fossil fuels in most markets; 26 trillion in net economic benefits by 2070 from climate action; transition delays compound unavoidable future costs.",
+      "case_against": "Rapid decarbonization imposes visible immediate costs on vulnerable populations through energy bills and job losses; uncertain climate damages don't justify certain economic harm today.",
       "questions": [
-        "Will inflation remain sticky above 3 percent through year-end or fall to 2.5 percent?",
-        "Is current resilient weakness in labor market sustainable or heading for recession?",
-        "Could AI bubble deflation trigger downturn independent of Iran conflict?"
+        "Do economic models accurately capture real costs of transition or risks of stranded assets?",
+        "Can benefits of climate action be distributed fairly to avoid widening inequality during energy transition?",
+        "Should climate finance flow directly between nations or through market mechanisms as some prefer?"
       ]
     },
     {
       "rank": 5,
-      "title": "Climate Policy versus Enforcement Gap",
-      "reach": "Widespread among policy makers, scientists, and international negotiators.",
-      "the_fear": "Scientific consensus on climate risk is not matched by enforcement mechanisms; disagreement on whether mitigation deadlines are still achievable.",
-      "why_contested": "Scientists warn 1.5\u00b0C goal already lost; some argue 2\u00b0C still possible with urgent action. Policy debate centers on cost of action versus cost of inaction, with genuine expert disagreement on tipping points and adaptation feasibility.",
-      "case_for": "Cascading climate damages will cost far more than decarbonization; Paris Agreement signatories not on track to meet commitments.",
-      "case_against": "Climate sensitivity to CO2 may be lower than models assume; adaptation capacity and technology improvements may be underestimated.",
+      "title": "China's Military Threat Level",
+      "reach": "Pentagon reports and US military positioning debates in April 2026 over how much China's force modernization threatens Taiwan and regional stability.",
+      "the_fear": "China's military could achieve 2027 objectives allowing invasion of Taiwan; 9 aircraft carriers by 2035 would challenge US dominance; cyber capabilities rival American capacity.",
+      "why_contested": "US allies in Japan and Philippines may exaggerate threat dependency to secure aid; alternative analysts argue Taiwan's geography and other Asian allies make Chinese hegemony unlikely even post-Taiwan loss; Chinese internal military problems exist.",
+      "case_for": "Pentagon confirms PLA targets 2027 Taiwan readiness with enhanced anti-ship missiles, counterstrike capability and exercised amphibious doctrine; nuclear arsenal reaching 1,000+ warheads creates asymmetric deterrence risk.",
+      "case_against": "Chinese military advancement is slower than feared with documented corruption disruptions; costs of Taiwan invasion would be prohibitive; allies could strengthen without US over-commitment that drains resources elsewhere.",
       "questions": [
-        "Is global temperature stabilization below 2\u00b0C still physically possible with 2026 emissions levels?",
-        "Should policy focus shift more toward adaptation than mitigation given uncertainty?",
-        "Can markets and technology deliver decarbonization without mandates?"
+        "Are Taiwan's defensibility and allied support sufficient to deter Chinese invasion attempts or does geography favor Beijing?",
+        "Should US military posture assume China's long-term intentions are limited to Taiwan or expect broader regional dominance?",
+        "Can US-China military rivalry coexist with economic interdependence or does competition inevitably lead to confrontation?"
       ]
     }
   ],
   "honorable_mentions": [
     {
-      "title": "Oil Price Volatility",
-      "summary": "Brent crude above 106 per barrel; disagreement on whether sustained above 100 or temporary spike from war premium."
+      "title": "India-Pakistan Tensions",
+      "summary": "Kashmir disputes, terrorism concerns and water disagreements create risk of military confrontation as both leaders seek to prove strength with US attention shifting."
     },
     {
-      "title": "US Military Overstretch",
-      "summary": "Debate over whether Middle East commitments strain readiness for potential China Taiwan conflict or NATO support."
+      "title": "Election Interference Fears",
+      "summary": "37 election experts expressed concern federal agents could disrupt 2026 US midterms voting; views split sharply on likelihood and severity of interference risks."
     },
     {
-      "title": "Birthright Citizenship Supreme Court Case",
-      "summary": "April 1 oral arguments; reasonable disagreement on constitutional interpretation and practical immigration impacts."
+      "title": "Strait of Hormuz Closure",
+      "summary": "Iran blockade caused fertilizer prices up 20% and global food crisis fears; debate continues over whether negotiated resolution or hardline approach better serves economic stability."
     },
     {
-      "title": "Birth Rate Decline",
-      "summary": "Contested whether younger women will catch up fertility later in life or whether demographics entering permanent decline."
+      "title": "Stop-and-Frisk Policing",
+      "summary": "Viral video reignited debate over police discretion with online opinion sharply divided on whether officer behavior represented overreach or justified precaution."
     },
     {
-      "title": "AI Model Safety Governance",
-      "summary": "Dispute over whether industry self-regulation suffices or federal and international controls necessary."
+      "title": "Vaccine Skepticism Spread",
+      "summary": "US vaccine skepticism rhetoric influences global vaccination confidence; experts disagree whether addressing vaccine hesitation is public health priority versus respecting individual choice."
     }
   ]
 }
