@@ -3,95 +3,95 @@
   "top5": [
     {
       "rank": 1,
-      "title": "US-Iran Conflict Escalation Risk",
-      "reach": "Widely covered across CNN, Al Jazeera, UK Parliament, and major global news sources.",
-      "the_fear": "Fragile ceasefire between US and Iran could collapse into full-scale war if negotiations fail.",
-      "why_contested": "Trump administration officials argue military position is weakened and time favors the US; Iranian officials and some diplomatic analysts warn that blockades and threats make negotiations impossible and increase escalation risk. Both sides dispute whether the other violates ceasefire terms.",
-      "case_for": "Trump administration emphasizes destroyed Iranian military capabilities, effective blockade, and negotiating leverage; military reports show degraded Iranian defenses and failed diplomatic overtures from Tehran.",
-      "case_against": "Iran argues blockade itself violates ceasefire; diplomatic experts warn US threats of infrastructure bombing could trigger uncontrolled escalation; shipping disruption threatens global economy.",
+      "title": "AI Extinction Risk Urgency",
+      "reach": "Experts from AI labs to major tech CEOs and researchers have publicly discussed existential risk, yet the debate divides even credible scientists.",
+      "the_fear": "Artificial intelligence could pose an existential risk to humanity comparable to pandemics or nuclear war.",
+      "why_contested": "Some leading AI researchers assign 5-10% probability of human extinction from AI, while others dismiss existential risks as science fiction or claim other priorities are more pressing. Meta's Yann LeCun has criticized the concern as premature, while Geoffrey Hinton and Yoshua Bengio express grave concerns.",
+      "case_for": "Hundreds of AI experts signed statements saying AI extinction risk should be a global priority; expert surveys show roughly 40% of respondents assess >10% extinction probability.",
+      "case_against": "Skeptics argue AI won't become superintelligent soon enough to threaten humanity, point to lack of tangible evidence for extinction scenarios, and contend other threats like pandemics deserve prioritization.",
       "questions": [
-        "Will blockade removal requirement prevent deal closure?",
-        "Could infrastructure targeting lead to unpredictable regional response?",
-        "Is US military dominance sufficient to force Iranian capitulation?"
+        "How rapidly will AGI achieve superhuman capabilities?",
+        "Can alignment strategies effectively constrain advanced AI systems?",
+        "Are extinction scenarios technically plausible or theoretical speculation?"
       ]
     },
     {
       "rank": 2,
-      "title": "AI Bubble Burst and Economic Contagion",
-      "reach": "Discussed by JPMorgan, Morgan Stanley, Yale SOM, Federal Reserve officials, and major financial media.",
-      "the_fear": "Massive overinvestment in AI infrastructure ($500B+ annually) could collapse if returns fail to materialize, triggering financial crisis.",
-      "why_contested": "Fed Chair Powell and JPMorgan argue AI companies generate real revenue unlike dot-com bubble; skeptics note 95% of enterprise AI shows zero return and massive debt-funded spending with uncertain profitability timelines. Both cite credible data.",
-      "case_for": "OpenAI spending $1.4T over 8 years with only $13B revenue; accounting tricks and special purpose vehicles disguise true costs; infrastructure spending contributes 1.1% to GDP growth, so collapse risks recession.",
-      "case_against": "AI generates actual enterprise value unlike dot-com; Fed notes real revenue streams and broader economic contribution; valuation metrics tied to fundamentals rather than pure speculation.",
+      "title": "Global Inflation Persistence Risk",
+      "reach": "Central banks, major financial institutions, and economists worldwide actively debate inflation trajectories with fundamentally different baseline expectations for 2026.",
+      "the_fear": "Inflation could remain sticky above target levels, eroding purchasing power and forcing prolonged monetary tightening.",
+      "why_contested": "Hawks argue inflation is normalizing and could become entrenched, pointing to elevated government debt and wage pressures; doves counter that labor market weakness and tariff effects are temporary, forecasting disinflation.",
+      "case_for": "Federal debt exceeds economy size for first time since WWII; consumer inflation expectations may be unmooring; wage-price spirals historically difficult to break.",
+      "case_against": "Recent inflation mostly reflects one-time tariff shocks and energy prices; core inflation has declined; AI productivity gains and labor market slackness should support disinflation without recession.",
       "questions": [
-        "Will recent corporate AI ROI improve or continue stagnating?",
-        "Could quantum computing advances suddenly make datacenter infrastructure obsolete?",
-        "Are current AI spending levels sustainable without demand breakthroughs?"
+        "How much do tariff effects vs. structural factors drive current inflation?",
+        "Will central banks maintain independence if inflation targets are missed?",
+        "Can AI productivity gains outpace wage growth pressures?"
       ]
     },
     {
       "rank": 3,
-      "title": "FISA Section 702 Warrantless Surveillance",
-      "reach": "Dominated Congressional debate; covered by CNN, NPR, Brennan Center, EPIC, and civil liberties organizations.",
-      "the_fear": "Domestic surveillance authority enables illegal spying on Americans by expanding into immigration enforcement and political targeting.",
-      "why_contested": "National security officials argue program is essential to counterterrorism and caught terrorist plot at 2024 Taylor Swift concert; civil libertarians across parties argue 349,000+ targets in 2025 with incidental American collection violates Fourth Amendment rights.",
-      "case_for": "Majority of presidential briefing relies on Section 702; Iran ceasefire creates urgent intelligence gap if program lapses; thwarts fentanyl trafficking and ransomware attacks.",
-      "case_against": "FBI and Justice Department abused surveillance authorities with improper searches; warrant requirements minimal; expansion into immigration enforcement without oversight; government officials have weaponized against political opponents.",
+      "title": "Climate Security Threat Prioritization",
+      "reach": "Intelligence agencies, governments, and scientific bodies globally debate whether climate poses imminent national security risk compared to geopolitical conflicts.",
+      "the_fear": "Climate change and ecosystem collapse pose catastrophic cascading security risks including conflict, migration, resource scarcity, and state failure.",
+      "why_contested": "UK issued biodiversity-security warning and scientific calls for global climate risk assessment, yet US Intelligence Community omitted climate from 2025-2026 threat assessments under Trump Administration, claiming other priorities dominate.",
+      "case_for": "Three hottest years on record; ecosystem collapse already underway; food/water security threats accelerating; biodiversity loss directly enables extremist recruitment.",
+      "case_against": "Immediate geopolitical conflicts (Iran, Ukraine, Taiwan tensions) demand urgent resources; climate impacts unfold over decades; public concern ranks climate 11th behind crime and inflation.",
       "questions": [
-        "Can warrant requirements for US person queries be added without compromising national security?",
-        "Will Trump administration use program against domestic opponents like Biden administration allegedly did?",
-        "Is incidental collection of Americans truly unavoidable or just unregulated?"
+        "Should intelligence analysis emphasize imminent security threats or long-term systemic risks?",
+        "How certain are cascading ecosystem collapse scenarios?",
+        "Can societies effectively address both acute conflicts and chronic climate risks simultaneously?"
       ]
     },
     {
       "rank": 4,
-      "title": "H5N1 Pandemic Spillover Risk",
-      "reach": "Covered by CDC, WHO, BBC Science Focus, Washington Post, and global health organizations.",
-      "the_fear": "Bird flu could evolve into pandemic strain infecting humans with 48% case fatality rate, despite low current public health risk.",
-      "why_contested": "CDC and WHO state current public health risk remains low with only sporadic cases; scientists warn H5N1 circulating in more species than ever with 2-10 detected case window before containment impossible. Farm workers increasingly marginalized under new enforcement.",
-      "case_for": "Virus spreading to dairy herds, wild mammals, poultry; France saw 96% outbreak reduction with vaccination but US producers resist on trade grounds; surveillance gaps widening; marginalized farm workers delay case reporting.",
-      "case_against": "Current infection rate sporadic; vaccines and antivirals effective if deployed; world better prepared than after COVID; pandemic requires sustained human transmission not yet demonstrated.",
+      "title": "Water Scarcity as Weapon Threat",
+      "reach": "UN, intelligence assessments, and hydropower nations actively debate whether water disputes risk military escalation or remain manageable through diplomacy.",
+      "the_fear": "Half of humanity lives under water stress with no governance framework; nuclear-armed rivals weaponizing rivers and dams could trigger regional war.",
+      "why_contested": "Some experts warn of immediate crisis potential with loaded weapons (Indus treaty suspended, Ethiopia dam operational without binding agreements); others argue economic interdependence and precedent for negotiated solutions prevent escalation.",
+      "case_for": "Strategic dams now built without downstream treaties; nuclear-armed India-Pakistan tensions rising; African extremists exploit water scarcity to recruit.",
+      "case_against": "Water disputes historically settled through negotiation despite tensions; economic costs of war exceed water benefits; modern desalination technology reduces scarcity pressure.",
       "questions": [
-        "Can US implement poultry vaccination before sustained human transmission occurs?",
-        "Will surveillance gaps in marginalized populations hide early pandemic spread?",
-        "Are current biosecurity measures adequate against windborne transmission between farms?"
+        "Which water conflicts pose imminent war risk versus long-term diplomatic challenge?",
+        "How effective are international water treaties in preventing weaponization?",
+        "Can technology mitigate scarcity before geopolitical tensions explode?"
       ]
     },
     {
       "rank": 5,
-      "title": "Political Violence and Capitol Security Threats",
-      "reach": "Covered by Roll Call, Congress, Capitol Police reports on escalating threats against members.",
-      "the_fear": "Rising political violence including murders of state lawmakers and attacks on elected officials signal systemic breakdown in democratic safety.",
-      "why_contested": "Democrats attribute violence to inflammatory Republican rhetoric about elections and immigrants; Republicans dispute whether threat level justifies security expansion or blame specific bad actors. Both sides point to genuine incidents but disagree on causation.",
-      "case_for": "State lawmaker murdered in June; Charlie Kirk assassination attempt; Capitol Police threat cases rising; members attacked at town halls; rhetoric correlates with incident timing.",
-      "case_against": "Violent crime rates fluctuate; attribution of causation to rhetoric disputed; security can be improved without curtailing speech; incidents involve isolated individuals not systematic campaign.",
+      "title": "US Government Institutional Risk",
+      "reach": "Global analysts, foreign policy institutions, and international observers debate whether Trump Administration policies destabilize American governance or represent legitimate domestic preference realignment.",
+      "the_fear": "US political system experiencing disruption to checks and balances, potentially undermining reliability as ally and risk management capacity.",
+      "why_contested": "Some experts assess Trump dismantling checks on power and weaponizing government machinery as existential governance threat; others view aggressive presidential action as constitutional use of authority reflecting voter preferences.",
+      "case_for": "Attempted retaliation against political enemies, elimination of independent agencies, executive overreach in tariffs; allies express concern about US reliability and postwar frameworks fracturing.",
+      "case_against": "Presidents have broad constitutional powers; policy shifts reflect electoral outcomes; democratic processes ultimately constrain abuse; institutional resilience has proven robust.",
       "questions": [
-        "Does inflammatory rhetoric measurably increase attack frequency or just attract attention to incidents?",
-        "Are current Capitol security measures proportionate to actual threat level?",
-        "How do we address political violence without restricting legitimate dissent?"
+        "What specific institutional safeguards have been compromised versus adapted?",
+        "How do voters' policy preferences differ from threats to democratic norms?",
+        "Can global allies manage partnership uncertainty without institutional collapse?"
       ]
     }
   ],
   "honorable_mentions": [
     {
-      "title": "Strait of Hormuz Shipping Disruption",
-      "summary": "Global economy faces rising costs as US-Iran blockades strangle oil markets and international trade; reasonable disagreement on whether blockade justifies escalation risk or protects national security interests."
+      "title": "AI Bubble Risk",
+      "summary": "Financial markets question whether AI infrastructure investment ($400B+ annually) will generate returns, with some predicting bubble burst while others see transformative productivity gains."
     },
     {
-      "title": "Federal Reserve Political Independence",
-      "summary": "Trump administration pressure on Fed chair and efforts to fire governors create uncertainty about monetary policy autonomy; experts divided on threat to inflation control versus necessary accountability measures."
+      "title": "Geoeconomic Confrontation Escalation",
+      "summary": "Economic tools (tariffs, sanctions, investment restrictions) increasingly weaponized; experts split on whether this represents normal competition or systemic fragmentation risk."
     },
     {
-      "title": "Content Moderation and Free Speech",
-      "summary": "Debates over Harvard debate withdrawal from Palestine topics reflect deeper conflict over whether suppressing controversial discourse protects vulnerable groups or undermines academic freedom."
+      "title": "Recession Probability 2026",
+      "summary": "Forecasters range from 1.5-2.4% US growth with low recession odds to scenarios where tariff shock and policy errors trigger mild contraction\u2014wide disagreement on baseline."
     },
     {
-      "title": "Chinese Cyber Threats to Healthcare",
-      "summary": "Escalating Typhoon campaigns targeting hospital networks with outdated equipment pose real security risk; disputed whether severity justifies emergency regulations or represents manageable industry challenge."
+      "title": "Migration and Demographic Transition Risk",
+      "summary": "Some warn demographic shifts, climate migration, and Gen Z youth bulges in Global South create instability; others note historical resilience and economic benefits of migration."
     },
     {
-      "title": "Immigration Enforcement and Refugee Risk",
-      "summary": "Record border enforcement driven deportations and refugee rejection; disagreement over whether reduction in border crossings reflects successful deterrence or humanitarian crisis waiting elsewhere."
+      "title": "Nuclear Weapons Proliferation Escalation",
+      "summary": "Japan and South Korea considering nuclear capabilities amid US reliability concerns; experts debate whether this stabilizes deterrence or triggers Asian arms race."
     }
   ]
 }
