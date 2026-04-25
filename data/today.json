@@ -3,95 +3,95 @@
   "top5": [
     {
       "rank": 1,
-      "title": "Middle East Conflict Escalation Risk",
-      "reach": "Multiple sources reporting ongoing tensions despite ceasefire.",
-      "the_fear": "Escalating military conflict between U.S./Israel and Iran will trigger regional warfare, oil supply collapse, and economic crisis.",
-      "why_contested": "Intelligence officials disagree on Iran's threat level; some say it poses immediate danger while others argue it has been sufficiently degraded. Ceasefire terms remain disputed between parties.",
-      "case_for": "Oil prices spike $106+, fertilizer costs rise 20%, consumer confidence at record lows; recent military strikes killed thousands.",
-      "case_against": "Ceasefire being maintained through diplomacy; grain inventories at record highs; some assess Iranian military significantly weakened by prior operations.",
+      "title": "Iran Conflict Escalation Risk",
+      "reach": "Dominant global news for weeks; ceasefire fragile with disagreement over terms.",
+      "the_fear": "War could resume, causing major energy disruption and global economic crisis via Strait of Hormuz closure.",
+      "why_contested": "Some officials and analysts believe military pressure is necessary deterrence; others argue blockade tactics escalate risks and that diplomacy remains viable. Deep disagreement exists on whether renewed strikes or continued negotiations best serve peace.",
+      "case_for": "USS blockade, damaged Iranian capabilities, and demonstrated US resolve create leverage for genuine negotiations.",
+      "case_against": "Military escalation derailed diplomacy, ceasefire violations by both sides continue, and Iran may have outlasted US patience.",
       "questions": [
-        "Will the ceasefire hold beyond April 26?",
-        "How severely has Iran's military capability actually been degraded?",
-        "Can economic impacts be contained if fighting resumes?"
+        "Can ceasefire be extended beyond current deadlines?",
+        "Would reopening Strait of Hormuz require Iranian security role or international neutrality?",
+        "Is military conflict better or worse outcome than extended sanctions stalemate?"
       ]
     },
     {
       "rank": 2,
-      "title": "Strait of Hormuz Supply Disruption",
-      "reach": "Reported daily in energy and economic coverage.",
-      "the_fear": "Iranian restrictions on shipping through Hormuz will trigger global energy shortage, food crisis via fertilizer costs, and economic shock.",
-      "why_contested": "Markets are pricing in disruption risk rather than actual blockade; some analysts expect normalization while others predict sustained scarcity.",
-      "case_for": "Fertilizer prices expected 20% higher if crisis persists; 20%+ of global oil flows through strait; shipping already reduced to trickle.",
-      "case_against": "FAO estimates record cereal stocks; some ships transiting despite restrictions; analysts warn input shocks take time to fully transmit.",
+      "title": "AI Safety versus Capability Race",
+      "reach": "Widespread among tech leaders, policymakers, and security experts; rapidly intensifying debate.",
+      "the_fear": "Advanced AI systems could pose existential risks or enable large-scale cyberattacks before adequate safeguards exist.",
+      "why_contested": "Leading experts warn of grave risks while tech industry argues benefits require rapid deployment; US policy favors light-touch regulation while EU and others pursue stricter frameworks. Disagreement centers on whether risks are speculative or imminent.",
+      "case_for": "International AI Safety Report 2026 documents concerning capabilities; industry models attempted self-harm avoidance and sabotage in safety tests.",
+      "case_against": "Current safeguards improving; no catastrophic incident has occurred; competitive pressure from China makes US caution economically risky.",
       "questions": [
-        "Will Iran maintain toll collection or attempt full closure?",
-        "How long can inventory buffers protect food security?",
-        "What's the true probability of permanent disruption?"
+        "Should frontier AI capabilities be legally restricted, left to industry, or governed internationally?",
+        "How certain must existential risk be before restricting beneficial innovation?",
+        "Can different regulatory approaches like US light-touch versus EU strict coexist?"
       ]
     },
     {
       "rank": 3,
-      "title": "Immigration and Public Safety Balance",
-      "reach": "Actively debated in policy circles and news coverage.",
-      "the_fear": "Weak enforcement of immigration law and sanctuary city policies enable serious crimes and endanger citizens.",
-      "why_contested": "Experts split on whether enforcement-focused or root-cause approaches better prevent crime; political polarization shapes perception of threat level.",
-      "case_for": "Incidents involving immigrants in sanctuary jurisdictions; TSA staffing concerns; enforcement advocates argue strict border control essential.",
-      "case_against": "Crime causation is multifactorial; enforcement alone doesn't address root causes; many sanctuary-city crime rates remain low.",
+      "title": "Immigration Policy Economic Impact",
+      "reach": "Divided politically; major economic debate between business, labor, and policy makers.",
+      "the_fear": "Restrictive enforcement either harms economy via labor shortages or helps by protecting wages; depends on one's economic model.",
+      "why_contested": "Economists genuinely disagree on wage effects for low-skilled workers and net fiscal impact; Trump policies caused sharp 2025-2026 net negative migration, creating new uncertainty. Both sides cite legitimate research supporting opposite conclusions.",
+      "case_for": "Strict enforcement protects low-skill workers from wage pressure; reduces strain on local public services; addresses sovereignty concerns.",
+      "case_against": "Negative net migration threatens GDP, Social Security solvency, and labor shortages in critical sectors; immigrants contributed 1.7 trillion to economy.",
       "questions": [
-        "Do sanctuary policies measurably increase crime risk?",
-        "What's the optimal balance of enforcement and integration?",
-        "How much does public perception exceed actual threat?"
+        "Will labor shortages in agriculture, construction, hospitality become acute by 2027?",
+        "Do low-skilled native workers face real wage compression from immigration?",
+        "Can enforcement-only approach sustain economically versus needing legal pathways?"
       ]
     },
     {
       "rank": 4,
-      "title": "AI and Digital Surveillance Threats",
-      "reach": "Emerging debate in tech policy and security communities.",
-      "the_fear": "AI systems and expanded government surveillance capabilities will erode privacy, enable authoritarian control, and undermine democratic oversight.",
-      "why_contested": "Supporters argue modernized tools are essential for national security; critics contend insufficient privacy safeguards and constitutional oversight exist.",
-      "case_for": "AI decision-making timelines compress; disinformation campaigns amplify; Large Language Models shift human-machine balance toward automation.",
-      "case_against": "Privacy protections and legislative frameworks exist in some jurisdictions; security agencies claim robust safeguards; threat assessment politicized.",
+      "title": "Inflation and Recession Risk",
+      "reach": "Central to consumer sentiment and market forecasts; economists sharply split on scenarios.",
+      "the_fear": "Either stagflation from Iran war supply shocks, or recession from AI bubble deflation; disagreement on which is greater threat.",
+      "why_contested": "IMF, JP Morgan, and other forecasters publish wide-ranging scenarios; Iran war shifted inflation expectations upward but not recession certainty. Some see energy crisis as temporary; others see structural inflation returning.",
+      "case_for": "Energy prices above 100 per barrel, disrupted shipping, tariff effects, and fiscal stimulus could create persistent 3-4 percent inflation.",
+      "case_against": "Flexible labor markets, better inflation expectations, and easing monetary policy can manage shock; recession probability only 30-35 percent by most models.",
       "questions": [
-        "Are privacy protections adequate for AI-driven systems?",
-        "Can oversight mechanisms keep pace with technology?",
-        "How do security needs balance individual rights?"
+        "Will inflation remain sticky above 3 percent through year-end or fall to 2.5 percent?",
+        "Is current resilient weakness in labor market sustainable or heading for recession?",
+        "Could AI bubble deflation trigger downturn independent of Iran conflict?"
       ]
     },
     {
       "rank": 5,
-      "title": "Energy Inflation and Stagflation Risk",
-      "reach": "Central to consumer sentiment and economic policy discussion.",
-      "the_fear": "Sustained oil prices above $100/barrel will trigger runaway inflation, crush consumer spending, and derail economic growth.",
-      "why_contested": "Some economists see temporary shock from geopolitical risk; others worry persistent disruption threatens structural price stability and employment.",
-      "case_for": "March inflation jumped to 3.3%; consumer sentiment at record low; airlines cutting earnings forecasts due to fuel costs.",
-      "case_against": "Inflation expectations moderate if ceasefire holds; energy represents subset of economy; monetary policy tools available to manage demand.",
+      "title": "Climate Policy versus Enforcement Gap",
+      "reach": "Widespread among policy makers, scientists, and international negotiators.",
+      "the_fear": "Scientific consensus on climate risk is not matched by enforcement mechanisms; disagreement on whether mitigation deadlines are still achievable.",
+      "why_contested": "Scientists warn 1.5\u00b0C goal already lost; some argue 2\u00b0C still possible with urgent action. Policy debate centers on cost of action versus cost of inaction, with genuine expert disagreement on tipping points and adaptation feasibility.",
+      "case_for": "Cascading climate damages will cost far more than decarbonization; Paris Agreement signatories not on track to meet commitments.",
+      "case_against": "Climate sensitivity to CO2 may be lower than models assume; adaptation capacity and technology improvements may be underestimated.",
       "questions": [
-        "Is current inflation transitory or structural?",
-        "How much does geopolitical risk premium persist?",
-        "Can central banks manage dual mandate if stagflation emerges?"
+        "Is global temperature stabilization below 2\u00b0C still physically possible with 2026 emissions levels?",
+        "Should policy focus shift more toward adaptation than mitigation given uncertainty?",
+        "Can markets and technology deliver decarbonization without mandates?"
       ]
     }
   ],
   "honorable_mentions": [
     {
-      "title": "Ukraine-Russia Negotiation Outcome",
-      "summary": "Experts divided on whether proposed settlements threaten Western security interests or represent pragmatic path to reducing casualties."
+      "title": "Oil Price Volatility",
+      "summary": "Brent crude above 106 per barrel; disagreement on whether sustained above 100 or temporary spike from war premium."
     },
     {
-      "title": "China-Taiwan Cross-Strait Tensions",
-      "summary": "Disagreement over whether U.S. strategic reassurance increases stability or provokes miscalculation in the Taiwan Strait."
+      "title": "US Military Overstretch",
+      "summary": "Debate over whether Middle East commitments strain readiness for potential China Taiwan conflict or NATO support."
     },
     {
-      "title": "AI Data Center Power Consumption",
-      "summary": "Contested debate on whether rapid energy demands from AI infrastructure justify regulatory intervention or will self-correct through market forces."
+      "title": "Birthright Citizenship Supreme Court Case",
+      "summary": "April 1 oral arguments; reasonable disagreement on constitutional interpretation and practical immigration impacts."
     },
     {
-      "title": "Teen Social Media Restrictions",
-      "summary": "Policy divisions over whether age-based bans protect youth mental health or infringe on expression and parental rights."
+      "title": "Birth Rate Decline",
+      "summary": "Contested whether younger women will catch up fertility later in life or whether demographics entering permanent decline."
     },
     {
-      "title": "Criminal Justice and Bail Reform",
-      "summary": "Ongoing dispute between those prioritizing public safety through detention and those emphasizing presumption of innocence and rehabilitation."
+      "title": "AI Model Safety Governance",
+      "summary": "Dispute over whether industry self-regulation suffices or federal and international controls necessary."
     }
   ]
 }
